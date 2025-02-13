@@ -4,6 +4,7 @@
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card"
 import { Spotlight } from "@/components/ui/spotlight"
+import { TextRewind } from "@/components/ui/text-rewind"
  
 export function SplineSceneBasic() {
   return (
@@ -16,9 +17,17 @@ export function SplineSceneBasic() {
       <div className="flex h-full">
         {/* Left content */}
         <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-            Interactive 3D
-          </h1>
+          <TextRewind 
+            text="Digitaliza-T"
+            shadowColors={{
+              first: "#07bccc",
+              second: "#e601c0",
+              third: "#e9019a",
+              fourth: "#f40468",
+              glow: "#f40468",
+            }}
+            className="text-4xl md:text-5xl"
+          />
           <p className="mt-4 text-neutral-300 max-w-lg">
             Bring your UI to life with beautiful 3D scenes. Create immersive experiences 
             that capture attention and enhance your design.
