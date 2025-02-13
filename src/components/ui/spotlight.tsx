@@ -8,12 +8,14 @@ type SpotlightProps = {
   className?: string;
   size?: number;
   springOptions?: SpringOptions;
+  fill?: string; // Add this line to include the fill prop
 };
 
 export function Spotlight({
   className,
   size = 200,
   springOptions = { bounce: 0 },
+  fill, // Add this to the destructured props
 }: SpotlightProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
