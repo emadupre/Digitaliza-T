@@ -13,12 +13,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 
 interface FormValues {
   username: string;
   email: string;
+  message: string;
 }
 
 const Contact = () => {
@@ -26,6 +28,7 @@ const Contact = () => {
     defaultValues: {
       username: "",
       email: "",
+      message: "",
     },
   });
 
@@ -99,6 +102,34 @@ const Contact = () => {
                     </FormControl>
                     <FormDescription>
                       Ingresa tu dirección de email.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                rules={{ 
+                  required: "El mensaje es requerido",
+                  minLength: {
+                    value: 10,
+                    message: "El mensaje debe tener al menos 10 caracteres"
+                  }
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Mensaje</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        placeholder="Escribe tu mensaje aquí..." 
+                        className="min-h-[120px]"
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Comparte los detalles de tu proyecto o consulta.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
