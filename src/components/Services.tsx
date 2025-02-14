@@ -1,6 +1,7 @@
 
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
+import { TextRevealByWord } from "@/components/ui/text-reveal";
 
 const displayCards = [
   {
@@ -36,6 +37,13 @@ const Services = () => {
   return (
     <section id="servicios" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto">
+        <div className="mb-16">
+          <TextRevealByWord 
+            text="Transformamos tu visión en soluciones digitales innovadoras que impulsan el crecimiento de tu negocio."
+            className="h-[50vh]"
+          />
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
