@@ -1,10 +1,11 @@
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { HeroParallax } from "@/components/blocks/hero-parallax";
+import { Footerdemo } from "@/components/ui/footer-section";
 
 const products = [
   {
@@ -110,7 +111,7 @@ const Index = () => {
         <Services />
         <HeroParallax products={products} />
         <Contact />
-        <Footer />
+        <Footerdemo />
       </div>
     </div>
   );
