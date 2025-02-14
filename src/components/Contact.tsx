@@ -1,19 +1,43 @@
 
-import { useState } from "react";
+"use client";
+
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 import { motion } from "framer-motion";
 
+interface FormValues {
+  username: string;
+  email: string;
+}
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
+  const form = useForm<FormValues>({
+    defaultValues: {
+      username: "",
+      email: "",
+    },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
-    console.log("Formulario enviado:", formData);
-  };
+  function onSubmit(data: FormValues) {
+    toast.success("Mensaje enviado con éxito!", {
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
+  }
 
   return (
     <section id="contacto" className="section-padding">
@@ -25,62 +49,68 @@ const Contact = () => {
           </p>
         </div>
 
-        <motion.form
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          onSubmit={handleSubmit}
-          className="space-y-6"
+          className="w-full max-w-md mx-auto"
         >
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Nombre
-            </label>
-            <input
-              type="text"
-              id="name"
-              required
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            />
-          </div>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="username"
+                rules={{ 
+                  required: "El nombre es requerido", 
+                  minLength: {
+                    value: 2,
+                    message: "El nombre debe tener al menos 2 caracteres"
+                  }
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Nombre</FormLabel>
+                    <FormControl>
+                      <Input placeholder="John Doe" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Este es tu nombre completo.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="email"
+                rules={{ 
+                  required: "El email es requerido",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Email inválido"
+                  }
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="john@example.com" type="email" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Ingresa tu dirección de email.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              required
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-              Mensaje
-            </label>
-            <textarea
-              id="message"
-              required
-              rows={4}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full px-8 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors"
-          >
-            Enviar Mensaje
-          </button>
-        </motion.form>
+              <Button type="submit" className="w-full">
+                Enviar Mensaje
+              </Button>
+            </form>
+          </Form>
+        </motion.div>
       </div>
     </section>
   );
