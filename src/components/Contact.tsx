@@ -20,6 +20,11 @@ import { motion } from "framer-motion";
 interface FormValues {
   username: string;
   email: string;
+  company: string;
+  phone: string;
+  projectType: string;
+  budget: string;
+  timeline: string;
   message: string;
 }
 
@@ -28,6 +33,11 @@ const Contact = () => {
     defaultValues: {
       username: "",
       email: "",
+      company: "",
+      phone: "",
+      projectType: "",
+      budget: "",
+      timeline: "",
       message: "",
     },
   });
@@ -48,7 +58,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contáctanos</h2>
           <p className="text-gray-600">
-            Estamos aquí para ayudarte a transformar tu visión en realidad
+            Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad
           </p>
         </div>
 
@@ -72,12 +82,12 @@ const Contact = () => {
                 }}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nombre</FormLabel>
+                    <FormLabel>Nombre Completo</FormLabel>
                     <FormControl>
                       <Input placeholder="John Doe" {...field} />
                     </FormControl>
                     <FormDescription>
-                      Este es tu nombre completo.
+                      Tu nombre completo o el de tu representante.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -101,7 +111,120 @@ const Contact = () => {
                       <Input placeholder="john@example.com" type="email" {...field} />
                     </FormControl>
                     <FormDescription>
-                      Ingresa tu dirección de email.
+                      Tu dirección de email principal.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="company"
+                rules={{ 
+                  required: "El nombre de la empresa es requerido"
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Empresa</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Nombre de tu empresa" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Nombre de tu empresa o proyecto.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="phone"
+                rules={{ 
+                  required: "El teléfono es requerido",
+                  pattern: {
+                    value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
+                    message: "Número de teléfono inválido"
+                  }
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Teléfono</FormLabel>
+                    <FormControl>
+                      <Input placeholder="+1 234 567 8900" type="tel" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Un número de teléfono donde podamos contactarte.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="projectType"
+                rules={{ 
+                  required: "El tipo de proyecto es requerido"
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Tipo de Proyecto</FormLabel>
+                    <FormControl>
+                      <Input 
+                        placeholder="Ej: Página web, Sistema de gestión, App móvil" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Describe brevemente el tipo de proyecto que necesitas.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="budget"
+                rules={{ 
+                  required: "El presupuesto estimado es requerido"
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Presupuesto Estimado</FormLabel>
+                    <FormControl>
+                      <Input 
+                        placeholder="Ej: $5,000 - $10,000" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Tu presupuesto aproximado para el proyecto.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="timeline"
+                rules={{ 
+                  required: "El tiempo estimado es requerido"
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Tiempo Estimado</FormLabel>
+                    <FormControl>
+                      <Input 
+                        placeholder="Ej: 3 meses, Antes de diciembre" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      ¿Cuándo necesitas que el proyecto esté terminado?
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -112,24 +235,24 @@ const Contact = () => {
                 control={form.control}
                 name="message"
                 rules={{ 
-                  required: "El mensaje es requerido",
+                  required: "La descripción del proyecto es requerida",
                   minLength: {
-                    value: 10,
-                    message: "El mensaje debe tener al menos 10 caracteres"
+                    value: 20,
+                    message: "Por favor, proporciona una descripción más detallada (mínimo 20 caracteres)"
                   }
                 }}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Mensaje</FormLabel>
+                    <FormLabel>Descripción del Proyecto</FormLabel>
                     <FormControl>
                       <Textarea 
-                        placeholder="Escribe tu mensaje aquí..." 
-                        className="min-h-[120px]"
+                        placeholder="Describe tu proyecto, objetivos, funcionalidades principales y cualquier detalle relevante..." 
+                        className="min-h-[150px]"
                         {...field} 
                       />
                     </FormControl>
                     <FormDescription>
-                      Comparte los detalles de tu proyecto o consulta.
+                      Proporciona todos los detalles posibles sobre tu proyecto.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -137,7 +260,7 @@ const Contact = () => {
               />
 
               <Button type="submit" className="w-full">
-                Enviar Mensaje
+                Enviar Solicitud
               </Button>
             </form>
           </Form>
