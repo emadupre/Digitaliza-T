@@ -9,95 +9,79 @@ import { Footerdemo } from "@/components/ui/footer-section";
 
 const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
+    title: "Sistema de Gestión Empresarial",
+    link: "#",
     thumbnail: "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
+    title: "E-commerce Boutique de Moda",
+    link: "#",
     thumbnail: "https://aceternity.com/images/products/thumbnails/new/cursor.png",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-  },
-
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "App de Delivery",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/rogue.png",
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    title: "Portal Educativo",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/editorially.png",
   },
   {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-  },
-
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    title: "Sistema de Gestión de Clínicas",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/editrix.png",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    title: "Dashboard Analítico",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    title: "App de Gestión de Inventarios",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
   },
   {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    title: "Sistema de Reservas",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
   },
   {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-  },
-
-  {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    title: "Portal Inmobiliario",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    title: "CRM Empresarial",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    title: "Sistema de Recursos Humanos",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    title: "App de Gestión de Proyectos",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+  },
+  {
+    title: "Portal de Servicios Profesionales",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+  },
+  {
+    title: "Sistema de Facturación",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+  },
+  {
+    title: "Plataforma de E-learning",
+    link: "#",
+    thumbnail: "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
   },
 ];
 
@@ -109,7 +93,17 @@ const Index = () => {
         <Navbar />
         <Hero />
         <Services />
-        <HeroParallax products={products} />
+        <div className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros Proyectos</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+                Descubre cómo hemos ayudado a empresas de diversos sectores a transformar sus ideas en soluciones digitales exitosas. Cada proyecto refleja nuestro compromiso con la excelencia y la innovación.
+              </p>
+            </div>
+          </div>
+          <HeroParallax products={products} />
+        </div>
         <Contact />
         <Footerdemo />
       </div>
