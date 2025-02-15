@@ -1,7 +1,7 @@
 
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
-import { TextRevealByWord } from "@/components/ui/text-reveal";
+import { BlurText } from "@/components/ui/blur-text";
 
 const displayCards = [
   {
@@ -38,9 +38,9 @@ const Services = () => {
     <section id="servicios" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <TextRevealByWord 
+          <BlurText 
             text="Transformamos tu visión en soluciones digitales innovadoras que impulsan el crecimiento de tu negocio."
-            className="h-[50vh]"
+            className="min-h-[20vh] flex items-center justify-center"
           />
         </div>
 
