@@ -2,8 +2,7 @@
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { SparkleButton } from "@/components/ui/sparkle-button";
 
 const displayCards = [
   {
@@ -60,16 +59,7 @@ const Services = () => {
         </div>
 
         <div className="flex justify-center mt-8">
-          <Link to="/contacto">
-            <Button 
-              className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
-            >
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E5B8D9_0%,#6EE7B7_50%,#9333EA_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                Comencemos
-              </span>
-            </Button>
-          </Link>
+          <SparkleButton text="Comencemos" href="/contacto" />
         </div>
       </div>
     </section>
