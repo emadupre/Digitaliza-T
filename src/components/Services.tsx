@@ -1,7 +1,7 @@
 
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
-import { BlurText } from "@/components/ui/blur-text";
+import { GradualSpacing } from "@/components/ui/gradual-spacing";
 
 const displayCards = [
   {
@@ -38,9 +38,9 @@ const Services = () => {
     <section id="servicios" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <BlurText 
+          <GradualSpacing 
             text="Transformamos tu visión en soluciones digitales innovadoras que impulsan el crecimiento de tu negocio."
-            className="min-h-[20vh] flex items-center justify-center"
+            className="text-2xl md:text-4xl font-semibold leading-relaxed"
           />
         </div>
 
