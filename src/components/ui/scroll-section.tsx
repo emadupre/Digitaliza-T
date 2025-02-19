@@ -1,5 +1,12 @@
 
+import { useEffect } from 'react';
+import { initScrollAnimation } from './scroll-config';
+
 const ScrollSection = () => {
+  useEffect(() => {
+    initScrollAnimation();
+  }, []);
+
   return (
     <div data-animate="true">
       <header>
