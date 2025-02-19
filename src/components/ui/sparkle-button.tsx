@@ -9,7 +9,8 @@ interface SparkleButtonProps {
 }
 
 export const SparkleButton = ({ text = "Comencemos", href = "/contacto" }: SparkleButtonProps) => {
-  const particlesRef = useRef<(HTMLElement | null)[]>([]);
+  // Cambiamos el tipo del useRef para aceptar SVGSVGElement
+  const particlesRef = useRef<(SVGSVGElement | null)[]>([]);
 
   useEffect(() => {
     const RANDOM = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
