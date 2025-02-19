@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
@@ -174,7 +175,29 @@
 
   .fluid {
     --font-size-min: 24;
-    --font-level: 8;
+    --font-size-max: 20;
+    --font-ratio-min: 1.1;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
     text-wrap: pretty;
     line-height: 0.8;
     margin: 0;
@@ -184,6 +207,12 @@
     );
     background-clip: text;
     color: transparent;
+  }
+
+  .content {
+    min-height: 300vh;
+    padding-top: 100vh;
+    width: 100%;
   }
 
   section:first-of-type {
@@ -210,6 +239,11 @@
     margin: 0;
     list-style-type: none;
     --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    font-size: 4rem;
+    margin-left: 12rem;
   }
 
   li:not(:last-of-type) {
@@ -217,6 +251,7 @@
       var(--lightness, 65%) var(--base-chroma, 0.3)
       calc(var(--start, 0) + (var(--step) * var(--i)))
     );
+    transition: opacity 0.3s ease;
   }
 
   header {
@@ -244,8 +279,8 @@
     animation: brighten;
     animation-fill-mode: both;
     animation-timing-function: linear;
-    animation-range: cover calc(50% - 1lh) calc(50% + 1lh);
     animation-timeline: view();
+    animation-range: entry 20% exit 80%;
   }
 
   @keyframes brighten {

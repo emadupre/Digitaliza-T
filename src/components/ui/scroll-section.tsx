@@ -1,7 +1,7 @@
 
 const ScrollSection = () => {
   return (
-    <>
+    <div data-animate="true">
       <header>
         <h1 className="fluid">you can<br />scroll.</h1>
       </header>
@@ -26,7 +26,7 @@ const ScrollSection = () => {
           </ul>
         </section>
       </main>
-    </>
+    </div>
   );
 };
 
