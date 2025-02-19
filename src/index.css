@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -171,6 +171,95 @@
       rotate: 360deg;
     }
   }
+
+  .fluid {
+    --font-size-min: 24;
+    --font-level: 8;
+    text-wrap: pretty;
+    line-height: 0.8;
+    margin: 0;
+    background: linear-gradient(
+      canvasText 60%,
+      color-mix(in oklch, canvas, canvasText)
+    );
+    background-clip: text;
+    color: transparent;
+  }
+
+  section:first-of-type {
+    --font-level: 6;
+    display: flex;
+    line-height: 1.25;
+    width: 100%;
+    padding-left: 5rem;
+  }
+
+  section:first-of-type h2 {
+    position: sticky;
+    top: calc(50% - 0.5lh);
+    font-size: inherit;
+    margin: 0;
+    display: inline-block;
+    height: fit-content;
+    font-weight: 600;
+  }
+
+  ul {
+    font-weight: 600;
+    padding-inline: 0;
+    margin: 0;
+    list-style-type: none;
+    --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+  }
+
+  li:not(:last-of-type) {
+    color: oklch(
+      var(--lightness, 65%) var(--base-chroma, 0.3)
+      calc(var(--start, 0) + (var(--step) * var(--i)))
+    );
+  }
+
+  header {
+    min-height: 100vh;
+    display: flex;
+    place-items: center;
+    width: 100%;
+    padding-inline: 5rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  [data-animate='true'] li {
+    opacity: 0.2;
+    animation: brighten;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-range: cover calc(50% - 1lh) calc(50% + 1lh);
+    animation-timeline: view();
+  }
+
+  @keyframes brighten {
+    0% {
+      opacity: var(--start-opacity, 0.2);
+    }
+    50% {
+      opacity: 1;
+      filter: brightness(var(--brightness, 1.2));
+    }
+    100% {
+      opacity: var(--end-opacity, 0.2);
+    }
+  }
 }
 
 @keyframes fadeIn {
@@ -192,4 +281,3 @@
     opacity: 1;
   }
 }
-
