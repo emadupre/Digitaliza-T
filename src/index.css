@@ -30,6 +30,10 @@
     --radius: 1rem;
     --transition: 0.25s;
     --spark: 1.8s;
+    --start: 0;
+    --end: 360;
+    --lightness: 65%;
+    --base-chroma: 0.3;
   }
 
   * {
@@ -198,15 +202,6 @@
       (var(--fluid-max) / 16) * 1rem
     );
     font-size: var(--fluid-type);
-    text-wrap: pretty;
-    line-height: 0.8;
-    margin: 0;
-    background: linear-gradient(
-      canvasText 60%,
-      color-mix(in oklch, canvas, canvasText)
-    );
-    background-clip: text;
-    color: transparent;
   }
 
   .content {
@@ -260,6 +255,30 @@
     place-items: center;
     width: 100%;
     padding-inline: 5rem;
+  }
+
+  h1 {
+    --font-size-min: 24;
+    --font-level: 8;
+    text-wrap: pretty;
+    line-height: 0.8;
+    margin: 0;
+    background: linear-gradient(
+      canvasText 60%,
+      color-mix(in oklch, canvas, canvasText)
+    );
+    background-clip: text;
+    color: transparent;
+  }
+
+  h2,
+  li:last-of-type {
+    background: linear-gradient(
+      canvasText 50%,
+      color-mix(in oklch, canvas, canvasText 25%)
+    );
+    background-clip: text;
+    color: transparent;
   }
 
   .sr-only {
