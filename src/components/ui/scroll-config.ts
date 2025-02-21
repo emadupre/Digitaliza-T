@@ -24,8 +24,8 @@ export const initScrollAnimation = () => {
   let items: HTMLElement[];
   let scrollerScrub: ScrollTrigger;
   let dimmerScrub: ScrollTrigger;
-  let chromaEntry: gsap.Core.Tween;
-  let chromaExit: gsap.Core.Tween;
+  let chromaEntry: gsap.core.Tween;
+  let chromaExit: gsap.core.Tween;
 
   const update = () => {
     document.documentElement.dataset.theme = config.theme;
@@ -62,31 +62,31 @@ export const initScrollAnimation = () => {
     document.startViewTransition(() => update());
   };
 
-  ctrl.addBinding(config, 'animate', {
+  (ctrl as any).addBinding(config, 'animate', {
     label: 'Animate',
   });
-  ctrl.addBinding(config, 'snap', {
+  (ctrl as any).addBinding(config, 'snap', {
     label: 'Snap',
   });
-  ctrl.addBinding(config, 'start', {
+  (ctrl as any).addBinding(config, 'start', {
     label: 'Hue Start',
     min: 0,
     max: 1000,
     step: 1,
   });
-  ctrl.addBinding(config, 'end', {
+  (ctrl as any).addBinding(config, 'end', {
     label: 'Hue End',
     min: 0,
     max: 1000,
     step: 1,
   });
-  ctrl.addBinding(config, 'scroll', {
+  (ctrl as any).addBinding(config, 'scroll', {
     label: 'Scrollbar',
   });
-  ctrl.addBinding(config, 'debug', {
+  (ctrl as any).addBinding(config, 'debug', {
     label: 'Debug',
   });
-  ctrl.addBinding(config, 'theme', {
+  (ctrl as any).addBinding(config, 'theme', {
     label: 'Theme',
     options: {
       System: 'system',
@@ -95,7 +95,7 @@ export const initScrollAnimation = () => {
     },
   });
 
-  ctrl.on('change', sync);
+  (ctrl as any).on('change', sync);
 
   if (!CSS.supports('(animation-timeline: scroll()) and (animation-range: 0% 100%)')) {
     items = gsap.utils.toArray('ul li');
