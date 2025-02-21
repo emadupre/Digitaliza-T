@@ -3,7 +3,6 @@ import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import { SparkleButton } from "@/components/ui/sparkle-button";
-import ScrollSection from "@/components/ui/scroll-section";
 
 const displayCards = [
   {
@@ -37,36 +36,33 @@ const displayCards = [
 
 const Services = () => {
   return (
-    <>
-      <ScrollSection />
-      <section id="servicios" className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <GradualSpacing 
-              text="Transformamos tu visión en soluciones digitales innovadoras que impulsan el crecimiento de tu negocio."
-              className="text-2xl md:text-4xl font-semibold leading-relaxed"
-            />
-          </div>
+    <section id="servicios" className="section-padding bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16">
+          <GradualSpacing 
+            text="Transformamos tu visión en soluciones digitales innovadoras que impulsan el crecimiento de tu negocio."
+            className="text-2xl md:text-4xl font-semibold leading-relaxed"
+          />
+        </div>
 
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Ofrecemos soluciones tecnológicas integrales para potenciar tu negocio
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Ofrecemos soluciones tecnológicas integrales para potenciar tu negocio
+          </p>
+        </div>
 
-          <div className="flex min-h-[400px] w-full items-center justify-center py-20">
-            <div className="w-full max-w-3xl">
-              <DisplayCards cards={displayCards} />
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-8">
-            <SparkleButton text="Comencemos" href="/contacto" />
+        <div className="flex min-h-[400px] w-full items-center justify-center py-20">
+          <div className="w-full max-w-3xl">
+            <DisplayCards cards={displayCards} />
           </div>
         </div>
-      </section>
-    </>
+
+        <div className="flex justify-center mt-8">
+          <SparkleButton text="Comencemos" href="/contacto" />
+        </div>
+      </div>
+    </section>
   );
 };
 
