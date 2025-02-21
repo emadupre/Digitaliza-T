@@ -5,6 +5,15 @@ import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card"
 import { Spotlight } from "@/components/ui/spotlight"
 import { TextRewind } from "@/components/ui/text-rewind"
+import { ErrorBoundary } from "react-error-boundary"
+
+function FallbackComponent() {
+  return (
+    <div className="w-full h-full flex items-center justify-center text-neutral-300">
+      Loading 3D scene...
+    </div>
+  )
+}
  
 export function SplineSceneBasic() {
   return (
@@ -36,10 +45,12 @@ export function SplineSceneBasic() {
 
         {/* Right content */}
         <div className="flex-1 relative">
-          <SplineScene 
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="w-full h-full"
-          />
+          <ErrorBoundary FallbackComponent={FallbackComponent}>
+            <SplineScene 
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </ErrorBoundary>
         </div>
       </div>
     </Card>
