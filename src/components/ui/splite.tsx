@@ -7,9 +7,14 @@ const Spline = lazy(() => import('@splinetool/react-spline'))
 interface SplineSceneProps {
   scene: string
   className?: string
+  options?: {
+    enableZoom?: boolean
+    autoRotate?: boolean
+    enablePan?: boolean
+  }
 }
 
-export function SplineScene({ scene, className }: SplineSceneProps) {
+export function SplineScene({ scene, className, options }: SplineSceneProps) {
   return (
     <Suspense 
       fallback={
@@ -21,6 +26,7 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
       <Spline
         scene={scene}
         className={className}
+        options={options}
       />
     </Suspense>
   )

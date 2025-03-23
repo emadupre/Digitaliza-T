@@ -38,8 +38,8 @@ export function SplineSceneBasic() {
             className="text-4xl md:text-5xl"
           />
           <p className="mt-4 text-neutral-300 max-w-lg">
-            Bring your UI to life with beautiful 3D scenes. Create immersive experiences 
-            that capture attention and enhance your design.
+            Transformamos tu visión en soluciones digitales innovadoras que impulsan 
+            el crecimiento de tu negocio en la era digital.
           </p>
         </div>
 
@@ -49,6 +49,7 @@ export function SplineSceneBasic() {
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full"
+              options={{ enableZoom: false, autoRotate: false, enablePan: false }}
             />
           </ErrorBoundary>
         </div>
