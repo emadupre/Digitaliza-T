@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -103,7 +102,6 @@ export function BeamsBackground({
             ctx.translate(beam.x, beam.y);
             ctx.rotate((beam.angle * Math.PI) / 180);
 
-            // Calculate pulsing opacity
             const pulsingOpacity =
                 beam.opacity *
                 (0.8 + Math.sin(beam.pulse) * 0.2) *
@@ -111,7 +109,6 @@ export function BeamsBackground({
 
             const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
 
-            // Enhanced gradient with multiple color stops
             gradient.addColorStop(0, `hsla(${beam.hue}, 85%, 65%, 0)`);
             gradient.addColorStop(
                 0.1,
@@ -147,7 +144,6 @@ export function BeamsBackground({
                 beam.y -= beam.speed;
                 beam.pulse += beam.pulseSpeed;
 
-                // Reset beam when it goes off screen
                 if (beam.y + beam.length < -100) {
                     resetBeam(beam, index, totalBeams);
                 }
@@ -171,7 +167,7 @@ export function BeamsBackground({
     return (
         <div
             className={cn(
-                "relative w-full overflow-hidden bg-neutral-950",
+                "w-full overflow-hidden bg-neutral-950",
                 className
             )}
         >
@@ -196,32 +192,7 @@ export function BeamsBackground({
                 }}
             />
 
-            {children ? (
-                <div className="relative z-10 w-full">{children}</div>
-            ) : (
-                <div className="relative z-10 flex h-screen w-full items-center justify-center">
-                    <div className="flex flex-col items-center justify-center gap-6 px-4 text-center">
-                        <motion.h1
-                            className="text-6xl md:text-7xl lg:text-8xl font-semibold text-white tracking-tighter"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            Beams
-                            <br />
-                            Background
-                        </motion.h1>
-                        <motion.p
-                            className="text-lg md:text-2xl lg:text-3xl text-white/70 tracking-tighter"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            For your pleasure
-                        </motion.p>
-                    </div>
-                </div>
-            )}
+            {children && <div className="relative z-10">{children}</div>}
         </div>
     );
 }

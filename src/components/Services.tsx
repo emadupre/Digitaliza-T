@@ -1,4 +1,3 @@
-
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
@@ -36,7 +35,7 @@ const displayCards = [
 
 const Services = () => {
   return (
-    <section id="servicios" className="section-padding bg-transparent text-white">
+    <section id="servicios" className="section-padding text-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <GradualSpacing 

@@ -8,13 +8,16 @@ import { Footerdemo } from "@/components/ui/footer-section";
 
 const Index = () => {
   return (
-    <BeamsBackground intensity="medium" className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Services />
-      <Contact />
-      <Footerdemo />
-    </BeamsBackground>
+    <div className="relative w-full">
+      <BeamsBackground intensity="medium" className="fixed inset-0 z-0" />
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Services />
+        <Contact />
+        <Footerdemo />
+      </div>
+    </div>
   );
 };
 
