@@ -93,10 +93,10 @@ const Contact = () => {
 
   return (
     <section id="contacto" className="section-padding">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto glass p-8 rounded-xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contáctanos</h2>
-          <p className="text-gray-600">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Contáctanos</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad
           </p>
         </div>
@@ -107,10 +107,10 @@ const Contact = () => {
               <div key={step.id} className="flex items-center">
                 <div className={`flex items-center justify-center w-8 h-8 rounded-full border-2 ${
                   step.id === currentStep 
-                    ? 'border-primary bg-primary text-white'
+                    ? 'border-primary bg-primary text-black font-bold'
                     : step.id < currentStep
-                    ? 'border-primary bg-primary text-white'
-                    : 'border-gray-300 text-gray-300'
+                    ? 'border-primary bg-primary text-black font-bold'
+                    : 'border-gray-400 text-gray-400'
                 }`}>
                   {step.id < currentStep ? (
                     <Check className="w-4 h-4" />
@@ -120,14 +120,14 @@ const Contact = () => {
                 </div>
                 {i < steps.length - 1 && (
                   <div className={`w-20 h-0.5 mx-2 ${
-                    step.id < currentStep ? 'bg-primary' : 'bg-gray-300'
+                    step.id < currentStep ? 'bg-primary' : 'bg-gray-400'
                   }`} />
                 )}
               </div>
             ))}
           </div>
           <div className="flex justify-center mt-2">
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-gray-300">
               {steps.find(step => step.id === currentStep)?.name}
             </span>
           </div>
@@ -346,7 +346,7 @@ const Contact = () => {
                     type="button"
                     variant="outline"
                     onClick={prevStep}
-                    className="flex-1"
+                    className="flex-1 border-gray-500 text-white hover:bg-gray-800 hover:text-white"
                   >
                     <ChevronLeft className="w-4 h-4 mr-2" />
                     Anterior
@@ -357,13 +357,16 @@ const Contact = () => {
                   <Button
                     type="button"
                     onClick={nextStep}
-                    className="flex-1"
+                    className="flex-1 bg-primary text-black hover:bg-primary/80"
                   >
                     Siguiente
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </Button>
                 ) : (
-                  <Button type="submit" className="flex-1">
+                  <Button 
+                    type="submit" 
+                    className="flex-1 bg-primary text-black hover:bg-primary/80"
+                  >
                     Enviar Solicitud
                   </Button>
                 )}
@@ -374,6 +377,6 @@ const Contact = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Contact;
