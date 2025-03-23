@@ -36,7 +36,7 @@ const displayCards = [
 
 const Services = () => {
   return (
-    <section id="servicios" className="section-padding bg-black text-white">
+    <section id="servicios" className="section-padding bg-transparent text-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <GradualSpacing 
