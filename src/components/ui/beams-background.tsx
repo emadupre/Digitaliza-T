@@ -42,8 +42,8 @@ function createBeam(width: number, height: number): Beam {
 
 export function BeamsBackground({
     className,
-    intensity = "strong",
     children,
+    intensity = "strong",
 }: AnimatedGradientBackgroundProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const beamsRef = useRef<Beam[]>([]);
@@ -171,13 +171,13 @@ export function BeamsBackground({
     return (
         <div
             className={cn(
-                "relative min-h-screen w-full overflow-hidden bg-neutral-950",
+                "relative w-full overflow-hidden bg-neutral-950",
                 className
             )}
         >
             <canvas
                 ref={canvasRef}
-                className="absolute inset-0"
+                className="absolute inset-0 w-full h-full"
                 style={{ filter: "blur(15px)" }}
             />
 
@@ -197,7 +197,7 @@ export function BeamsBackground({
             />
 
             {children ? (
-                <div className="relative z-10 w-full h-full">{children}</div>
+                <div className="relative z-10 w-full">{children}</div>
             ) : (
                 <div className="relative z-10 flex h-screen w-full items-center justify-center">
                     <div className="flex flex-col items-center justify-center gap-6 px-4 text-center">
