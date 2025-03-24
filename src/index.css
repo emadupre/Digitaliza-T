@@ -236,8 +236,12 @@
     --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    font-size: 4rem;
+    gap: .5em;
+    font-size: 1rem;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   li:not(:last-of-type) {

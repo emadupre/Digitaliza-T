@@ -23,19 +23,19 @@ const Footer = () => {
               Transformando el futuro digital de tu negocio con soluciones tecnológicas innovadoras y estrategias personalizadas para el crecimiento online.
             </p>
             <div className="flex space-x-4">
-              <Button variant="outline" size="icon" className="rounded-full border-gray-700 bg-transparent hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
+              <Button variant="outline" size="icon" className="rounded-full border-gray-700 hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full border-gray-700 bg-transparent hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
+              <Button variant="outline" size="icon" className="rounded-full border-gray-700 hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full border-gray-700 bg-transparent hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
+              <Button variant="outline" size="icon" className="rounded-full border-gray-700 hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full border-gray-700 bg-transparent hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
+              <Button variant="outline" size="icon" className="rounded-full border-gray-700 hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
