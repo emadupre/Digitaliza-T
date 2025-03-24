@@ -27,38 +27,33 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
         scene={scene}
         className={className}
         onLoad={(splineApp) => {
-          if (options?.enableZoom === false) {
-            try {
-              // Intenta acceder a los controles de la cámara a través de la API de splineApp
-              const camera = splineApp.findObjectByName('Camera');
-              if (camera && camera.userData && camera.userData.controls) {
-                camera.userData.controls.enableZoom = false;
+          // Use try-catch to safely handle any issues with the Spline API
+          try {
+            if (options?.enableZoom === false) {
+              // Try a different approach to disable zoom
+              const cameraControls = splineApp?.default?.wheelZoom;
+              if (cameraControls) {
+                cameraControls.active = false;
               }
-            } catch (error) {
-              console.error("Failed to disable zoom:", error);
             }
-          }
-          
-          if (options?.enablePan === false) {
-            try {
-              const camera = splineApp.findObjectByName('Camera');
-              if (camera && camera.userData && camera.userData.controls) {
-                camera.userData.controls.enablePan = false;
+            
+            if (options?.enablePan === false) {
+              // Try a different approach to disable pan
+              const cameraPan = splineApp?.default?.pan;
+              if (cameraPan) {
+                cameraPan.active = false;
               }
-            } catch (error) {
-              console.error("Failed to disable pan:", error);
             }
-          }
-          
-          if (options?.autoRotate === false) {
-            try {
-              const camera = splineApp.findObjectByName('Camera');
-              if (camera && camera.userData && camera.userData.controls) {
-                camera.userData.controls.autoRotate = false;
+            
+            if (options?.autoRotate === false) {
+              // Try a different approach to disable auto-rotate
+              const cameraRotate = splineApp?.default?.autoRotate;
+              if (cameraRotate) {
+                cameraRotate.active = false;
               }
-            } catch (error) {
-              console.error("Failed to disable auto-rotate:", error);
             }
+          } catch (error) {
+            console.error("Failed to configure Spline options:", error);
           }
         }}
       />
