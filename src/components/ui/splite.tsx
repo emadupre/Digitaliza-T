@@ -29,10 +29,10 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
         onLoad={(splineApp) => {
           if (options?.enableZoom === false) {
             try {
-              // Attempt to access camera controls through the spline app
-              const cameraControls = splineApp.findObjectByName('Camera')?.userData?.controls;
-              if (cameraControls) {
-                cameraControls.enableZoom = false;
+              // Intenta acceder a los controles de la cámara a través de la API de splineApp
+              const camera = splineApp.findObjectByName('Camera');
+              if (camera && camera.userData && camera.userData.controls) {
+                camera.userData.controls.enableZoom = false;
               }
             } catch (error) {
               console.error("Failed to disable zoom:", error);
@@ -41,9 +41,9 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
           
           if (options?.enablePan === false) {
             try {
-              const cameraControls = splineApp.findObjectByName('Camera')?.userData?.controls;
-              if (cameraControls) {
-                cameraControls.enablePan = false;
+              const camera = splineApp.findObjectByName('Camera');
+              if (camera && camera.userData && camera.userData.controls) {
+                camera.userData.controls.enablePan = false;
               }
             } catch (error) {
               console.error("Failed to disable pan:", error);
@@ -52,9 +52,9 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
           
           if (options?.autoRotate === false) {
             try {
-              const cameraControls = splineApp.findObjectByName('Camera')?.userData?.controls;
-              if (cameraControls) {
-                cameraControls.autoRotate = false;
+              const camera = splineApp.findObjectByName('Camera');
+              if (camera && camera.userData && camera.userData.controls) {
+                camera.userData.controls.autoRotate = false;
               }
             } catch (error) {
               console.error("Failed to disable auto-rotate:", error);

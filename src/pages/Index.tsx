@@ -2,9 +2,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import { BeamsBackground } from "@/components/ui/beams-background";
-import { Footerdemo } from "@/components/ui/footer-section";
 
 const Index = () => {
   return (
@@ -14,8 +15,9 @@ const Index = () => {
         <Navbar />
         <Hero />
         <Services />
+        <Projects />
         <Contact />
-        <Footerdemo />
+        <Footer />
       </div>
     </div>
   );
