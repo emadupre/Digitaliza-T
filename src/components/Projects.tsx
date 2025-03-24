@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import { 
@@ -18,10 +17,7 @@ import { ProjectCard } from "@/components/project-card";
 import { projectsData } from "@/lib/project-data";
 
 const Projects = () => {
-  // Get the featured project (first one)
   const featuredProject = projectsData[0];
-  
-  // Categorías únicas para los tabs del modal
   const categories = Array.from(new Set(projectsData.map(project => project.category)));
 
   return (
@@ -29,7 +25,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-16 max-w-3xl">
           <GradualSpacing 
-            text="Soluciones digitales que transforman negocios"
+            text="Soluciones digitales que transforman empresas"
             className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white"
           />
         </div>
@@ -37,7 +33,7 @@ const Projects = () => {
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Nuestros Proyectos</h2>
           <p className="text-gray-300">
-            Descubre cómo hemos ayudado a empresas de diversos sectores a transformar digitalmente su negocio
+            Descubre cómo impulsamos la transformación digital de empresas innovadoras
           </p>
         </div>
 
@@ -120,7 +116,10 @@ const Projects = () => {
           <div className="flex justify-center mt-10">
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="text-white border-primary/30 hover:bg-primary/10 hover:border-primary backdrop-blur-sm text-lg px-8 py-6 h-auto group">
+                <Button 
+                  variant="ghost" 
+                  className="text-white border-primary/30 hover:bg-primary/10 hover:border-primary backdrop-blur-sm text-lg px-8 py-6 h-auto group"
+                >
                   Ver más proyectos <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </DialogTrigger>
