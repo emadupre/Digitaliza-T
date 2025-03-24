@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 glass">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-8">
             <img 
               src="/lovable-uploads/02e787e4-edc1-4555-8e33-101cfc7faa03.png" 
               alt="Digitaliza-T Logo" 
