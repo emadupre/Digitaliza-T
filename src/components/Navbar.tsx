@@ -13,7 +13,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/02e787e4-edc1-4555-8e33-101cfc7faa03.png" 
               alt="Digitaliza-T Logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto mb-6 invert"
             />
           </div>
           
