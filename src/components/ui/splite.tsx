@@ -29,27 +29,27 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
         onLoad={(splineApp) => {
           // Use try-catch to safely handle any issues with the Spline API
           try {
+            // Since we can't directly access these properties due to TypeScript errors,
+            // we'll use a more generic approach to try and disable features
             if (options?.enableZoom === false) {
-              // Try a different approach to disable zoom
-              const cameraControls = splineApp?.wheelZoom;
-              if (cameraControls) {
-                cameraControls.active = false;
+              // Try a more generic approach using any type
+              const app = splineApp as any;
+              if (app && typeof app.setZoom === 'function') {
+                app.setZoom(false);
               }
             }
             
             if (options?.enablePan === false) {
-              // Try a different approach to disable pan
-              const cameraPan = splineApp?.pan;
-              if (cameraPan) {
-                cameraPan.active = false;
+              const app = splineApp as any;
+              if (app && typeof app.setPan === 'function') {
+                app.setPan(false);
               }
             }
             
             if (options?.autoRotate === false) {
-              // Try a different approach to disable auto-rotate
-              const cameraRotate = splineApp?.autoRotate;
-              if (cameraRotate) {
-                cameraRotate.active = false;
+              const app = splineApp as any;
+              if (app && typeof app.setAutoRotate === 'function') {
+                app.setAutoRotate(false);
               }
             }
           } catch (error) {

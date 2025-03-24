@@ -19,19 +19,19 @@ const Footer = () => {
               Transformando el futuro digital de tu negocio con soluciones tecnológicas innovadoras.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-800">
+              <Button variant="outline" size="icon" className="rounded-full hover:bg-gray-800 hover:text-primary hover:border-primary transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-800">
+              <Button variant="outline" size="icon" className="rounded-full hover:bg-gray-800 hover:text-primary hover:border-primary transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-800">
+              <Button variant="outline" size="icon" className="rounded-full hover:bg-gray-800 hover:text-primary hover:border-primary transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-gray-800">
+              <Button variant="outline" size="icon" className="rounded-full hover:bg-gray-800 hover:text-primary hover:border-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
@@ -42,26 +42,26 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6 text-primary">Enlaces Rápidos</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#inicio" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center">
-                  <span className="h-1 w-1 bg-primary rounded-full mr-2"></span>
+                <a href="#inicio" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
+                  <span className="h-1 w-1 bg-primary rounded-full mr-2 group-hover:w-2 transition-all"></span>
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center">
-                  <span className="h-1 w-1 bg-primary rounded-full mr-2"></span>
+                <a href="#servicios" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
+                  <span className="h-1 w-1 bg-primary rounded-full mr-2 group-hover:w-2 transition-all"></span>
                   Servicios
                 </a>
               </li>
               <li>
-                <a href="#proyectos" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center">
-                  <span className="h-1 w-1 bg-primary rounded-full mr-2"></span>
+                <a href="#proyectos" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
+                  <span className="h-1 w-1 bg-primary rounded-full mr-2 group-hover:w-2 transition-all"></span>
                   Proyectos
                 </a>
               </li>
               <li>
-                <a href="#contacto" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center">
-                  <span className="h-1 w-1 bg-primary rounded-full mr-2"></span>
+                <a href="#contacto" className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
+                  <span className="h-1 w-1 bg-primary rounded-full mr-2 group-hover:w-2 transition-all"></span>
                   Contacto
                 </a>
               </li>
@@ -71,25 +71,25 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-6 text-primary">Contacto</h3>
             <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start">
-                <div className="mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-start hover:text-primary transition-colors duration-300 group">
+                <div className="mr-3 mt-1 text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span>info@digitaliza-t.com</span>
+                <span className="hover:underline">info@digitaliza-t.com</span>
               </li>
-              <li className="flex items-start">
-                <div className="mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-start hover:text-primary transition-colors duration-300 group">
+                <div className="mr-3 mt-1 text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span>+34 900 123 456</span>
+                <span className="hover:underline">+34 900 123 456</span>
               </li>
-              <li className="flex items-start">
-                <div className="mr-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li className="flex items-start hover:text-primary transition-colors duration-300 group">
+                <div className="mr-3 mt-1 text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
