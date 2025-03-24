@@ -26,30 +26,38 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
       <Spline
         scene={scene}
         className={className}
-        // Instead of passing options directly, we need to pass individual props
-        // that the Spline component actually accepts
-        onLoad={(spline) => {
+        onLoad={(splineApp) => {
           if (options?.enableZoom === false) {
-            // Disable zoom if specified
-            const camera = spline.camera;
-            if (camera) {
-              camera.zoom.enable = false;
+            try {
+              // Attempt to access camera controls through the spline app
+              const cameraControls = splineApp.findObjectByName('Camera')?.userData?.controls;
+              if (cameraControls) {
+                cameraControls.enableZoom = false;
+              }
+            } catch (error) {
+              console.error("Failed to disable zoom:", error);
             }
           }
           
           if (options?.enablePan === false) {
-            // Disable pan if specified
-            const camera = spline.camera;
-            if (camera) {
-              camera.pan.enable = false;
+            try {
+              const cameraControls = splineApp.findObjectByName('Camera')?.userData?.controls;
+              if (cameraControls) {
+                cameraControls.enablePan = false;
+              }
+            } catch (error) {
+              console.error("Failed to disable pan:", error);
             }
           }
           
           if (options?.autoRotate === false) {
-            // Disable auto rotation if specified
-            const camera = spline.camera;
-            if (camera) {
-              camera.autoRotate = false;
+            try {
+              const cameraControls = splineApp.findObjectByName('Camera')?.userData?.controls;
+              if (cameraControls) {
+                cameraControls.autoRotate = false;
+              }
+            } catch (error) {
+              console.error("Failed to disable auto-rotate:", error);
             }
           }
         }}
