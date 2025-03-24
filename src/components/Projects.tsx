@@ -18,7 +18,7 @@ const projectsData = [
   {
     id: 1,
     title: "Sistema de Turnos Online",
-    image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1633526543814-9718c8922b7a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     shortDesc: "Plataforma para gestión de turnos con calendario interactivo",
     fullDesc: "Desarrollo de un sistema de turnos para centros de estética y salud. Permite la reserva en línea, recordatorios automáticos y administración de horarios. Integración con Google Calendar y notificaciones por WhatsApp y email.",
     tags: ["Reservas", "React", "Node.js", "Automatización"],
@@ -38,7 +38,7 @@ const projectsData = [
   {
     id: 3,
     title: "Automatización de Bots para WhatsApp",
-    image: "https://images.unsplash.com/photo-1562813733-b31f71025d57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1611746869696-d09bce200020?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     shortDesc: "Chatbots inteligentes para atención al cliente",
     fullDesc: "Desarrollo de bots automatizados para atención en WhatsApp. Integración con bases de datos y respuestas inteligentes mediante IA. Permite gestionar consultas, reservas y pedidos sin intervención humana.",
     tags: ["Bots", "Python", "IA", "WhatsApp"],
