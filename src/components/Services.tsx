@@ -1,3 +1,4 @@
+
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
@@ -39,8 +40,8 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <GradualSpacing 
-            text="Transformamos tu visión en soluciones digitales innovadoras que impulsan el crecimiento de tu negocio."
-            className="text-2xl md:text-4xl font-semibold leading-relaxed text-white"
+            text="Creamos soluciones digitales a medida"
+            className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white"
           />
         </div>
 
