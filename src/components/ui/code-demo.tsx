@@ -31,10 +31,6 @@ export function SplineSceneBasic() {
             }}
             className="text-4xl md:text-5xl"
           />
-          <p className="mt-4 text-neutral-300 max-w-lg">
-            Transformamos tu visión en soluciones digitales innovadoras que impulsan 
-            el crecimiento de tu negocio en la era digital.
-          </p>
         </div>
 
         {/* Right content */}
