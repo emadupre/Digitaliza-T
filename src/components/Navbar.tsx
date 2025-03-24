@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 hover:text-accent"
+              className="text-white-800 hover:text-accent"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
