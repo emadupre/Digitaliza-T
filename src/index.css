@@ -238,7 +238,6 @@
     flex-direction: column;
     gap: 0.5em;
     font-size: 4rem;
-    margin-left: 12rem;
   }
 
   li:not(:last-of-type) {
