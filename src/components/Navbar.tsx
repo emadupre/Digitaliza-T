@@ -15,6 +15,7 @@ const Navbar = () => {
               alt="Digitaliza-T Logo" 
               className="h-8 w-auto"
             />
+            <a href="#home" className="text-white hover:text-accent transition-colors">Digitaliza-T</a>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
