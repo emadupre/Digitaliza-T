@@ -26,7 +26,33 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
       <Spline
         scene={scene}
         className={className}
-        options={options}
+        // Instead of passing options directly, we need to pass individual props
+        // that the Spline component actually accepts
+        onLoad={(spline) => {
+          if (options?.enableZoom === false) {
+            // Disable zoom if specified
+            const camera = spline.camera;
+            if (camera) {
+              camera.zoom.enable = false;
+            }
+          }
+          
+          if (options?.enablePan === false) {
+            // Disable pan if specified
+            const camera = spline.camera;
+            if (camera) {
+              camera.pan.enable = false;
+            }
+          }
+          
+          if (options?.autoRotate === false) {
+            // Disable auto rotation if specified
+            const camera = spline.camera;
+            if (camera) {
+              camera.autoRotate = false;
+            }
+          }
+        }}
       />
     </Suspense>
   )
