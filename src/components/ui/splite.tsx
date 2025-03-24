@@ -9,8 +9,8 @@ interface SplineSceneProps {
   className?: string
   options?: {
     enableZoom?: boolean
-    autoRotate?: boolean
     enablePan?: boolean
+    autoRotate?: boolean
   }
 }
 
@@ -31,7 +31,7 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
           try {
             if (options?.enableZoom === false) {
               // Try a different approach to disable zoom
-              const cameraControls = splineApp?.default?.wheelZoom;
+              const cameraControls = splineApp?.wheelZoom;
               if (cameraControls) {
                 cameraControls.active = false;
               }
@@ -39,7 +39,7 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
             
             if (options?.enablePan === false) {
               // Try a different approach to disable pan
-              const cameraPan = splineApp?.default?.pan;
+              const cameraPan = splineApp?.pan;
               if (cameraPan) {
                 cameraPan.active = false;
               }
@@ -47,7 +47,7 @@ export function SplineScene({ scene, className, options }: SplineSceneProps) {
             
             if (options?.autoRotate === false) {
               // Try a different approach to disable auto-rotate
-              const cameraRotate = splineApp?.default?.autoRotate;
+              const cameraRotate = splineApp?.autoRotate;
               if (cameraRotate) {
                 cameraRotate.active = false;
               }
