@@ -17,43 +17,43 @@ import { X } from "lucide-react";
 const projectsData = [
   {
     id: 1,
-    title: "E-commerce para moda sostenible",
+    title: "Sistema de Turnos Online",
     image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    shortDesc: "Plataforma de venta online para productos de moda sostenible",
-    fullDesc: "Desarrollo completo de una plataforma e-commerce para una marca de moda sostenible. Incluye catálogo, sistema de pagos, gestión de inventario y panel de administración personalizado. Implementamos un diseño responsivo y optimizado para SEO que resultó en un aumento del 43% en ventas online.",
-    tags: ["E-commerce", "React", "Node.js", "SEO"],
-    client: "EcoFashion",
-    year: "2023"
+    shortDesc: "Plataforma para gestión de turnos con calendario interactivo",
+    fullDesc: "Desarrollo de un sistema de turnos para centros de estética y salud. Permite la reserva en línea, recordatorios automáticos y administración de horarios. Integración con Google Calendar y notificaciones por WhatsApp y email.",
+    tags: ["Reservas", "React", "Node.js", "Automatización"],
+    client: "Estetica Bella",
+    year: "2025"
   },
   {
     id: 2,
-    title: "App de delivery para restaurantes",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    shortDesc: "Aplicación móvil para gestionar pedidos a domicilio",
-    fullDesc: "Diseño y desarrollo de una aplicación móvil que permite a los restaurantes gestionar sus pedidos a domicilio sin depender de plataformas externas. Incluye sistema de notificaciones, seguimiento en tiempo real y analíticas de ventas. La aplicación ha permitido a los clientes reducir sus comisiones en un 25%.",
-    tags: ["App Móvil", "React Native", "Firebase", "Geolocalización"],
-    client: "FoodConnect",
-    year: "2022"
+    title: "Desarrollo de Página Web Corporativa",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    shortDesc: "Diseño y desarrollo de presencia digital",
+    fullDesc: "Creación de una página web moderna y optimizada para SEO. Diseño responsivo, integración con redes sociales y sistema de administración de contenido personalizado.",
+    tags: ["Web", "WordPress", "SEO", "UX/UI"],
+    client: "Olimpia Capital",
+    year: "2025"
   },
   {
     id: 3,
-    title: "Plataforma educativa online",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    shortDesc: "Sistema LMS para cursos virtuales",
-    fullDesc: "Creación de una plataforma educativa online con funcionalidades de LMS (Learning Management System). Incluye gestión de cursos, sistema de videoconferencias integrado, evaluaciones automatizadas y certificaciones digitales. La plataforma ha permitido a la institución expandir su oferta educativa internacionalmente.",
-    tags: ["Educación", "LMS", "Angular", "AWS"],
+    title: "Automatización de Bots para WhatsApp",
+    image: "https://images.unsplash.com/photo-1562813733-b31f71025d57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    shortDesc: "Chatbots inteligentes para atención al cliente",
+    fullDesc: "Desarrollo de bots automatizados para atención en WhatsApp. Integración con bases de datos y respuestas inteligentes mediante IA. Permite gestionar consultas, reservas y pedidos sin intervención humana.",
+    tags: ["Bots", "Python", "IA", "WhatsApp"],
     client: "EduTech Academy",
-    year: "2023"
+    year: "2024"
   },
   {
     id: 4,
-    title: "Dashboard para IoT industrial",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    shortDesc: "Panel de control para monitoreo de dispositivos IoT",
-    fullDesc: "Desarrollo de un dashboard para el monitoreo en tiempo real de dispositivos IoT en entornos industriales. El sistema procesa más de 10,000 puntos de datos por minuto, genera alertas automatizadas y proporciona visualizaciones avanzadas que han ayudado a optimizar la producción en un 17%.",
-    tags: ["IoT", "Dashboard", "BigData", "React"],
-    client: "IndusTech Solutions",
-    year: "2022"
+    title: "Página Web para Artista",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    shortDesc: "Portfolio digital con galería interactiva y tienda online",
+    fullDesc: "Diseño y desarrollo de una página web para un artista. Incluye galería de obras, biografía, blog, sistema de reservas para eventos y tienda online para la venta de productos exclusivos. Optimizada para dispositivos móviles y con integración en redes sociales.",
+    tags: ["Web", "Portfolio", "E-commerce", "SEO"],
+    client: "Jeremy Baxter",
+    year: "2023"
   },
 ];
 
