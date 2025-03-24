@@ -3,7 +3,6 @@
 
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card"
-import { TextRewind } from "@/components/ui/text-rewind"
 import { ErrorBoundary } from "react-error-boundary"
 
 function FallbackComponent() {
