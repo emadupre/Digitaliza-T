@@ -7,24 +7,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 51 100% 50%;
+    --background: 240 30% 5%;
+    --foreground: 240 10% 98%;
+    --card: 240 30% 7%;
+    --card-foreground: 240 10% 98%;
+    --popover: 240 30% 7%;
+    --popover-foreground: 240 10% 98%;
+    --primary: 270 90% 65%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 95% 71%;
+    --secondary: 340 95% 71%;
     --secondary-foreground: 240 5.9% 10%;
-    --accent: 271 91% 65%;
+    --accent: 270 90% 65%;
     --accent-foreground: 0 0% 98%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 240 20% 15%;
+    --muted-foreground: 240 10% 70%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --border: 240 25% 15%;
+    --input: 240 25% 15%;
     --ring: 271 91% 65%;
     --radius: 1rem;
     --transition: 0.25s;
@@ -36,7 +36,7 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-border selection:bg-purple-500/30 selection:text-white;
   }
 
   body {
@@ -46,12 +46,13 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+    @apply font-bold;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg;
   }
   
   .section-padding {
@@ -59,11 +60,11 @@
   }
 
   .fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.6s ease-out forwards;
   }
 
   .slide-up {
-    animation: slideUp 0.5s ease-out forwards;
+    animation: slideUp 0.6s ease-out forwards;
   }
 
   .sparkle-button {
@@ -320,6 +321,50 @@
       opacity: var(--end-opacity, 0.2);
     }
   }
+
+  /* Existing sparkle-button classes */
+  
+
+  /* Existing fluid classes and animations */
+  
+
+  /* Existing content classes */
+  
+
+  /* Existing section and list styles */
+  
+
+  /* Existing header and heading styles */
+  
+
+  /* Add new gradient text utilities */
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-500 to-indigo-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .card-glow {
+    @apply relative;
+  }
+
+  .card-glow::before {
+    @apply content-[''] absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl blur-sm opacity-40 transition-all duration-300;
+  }
+
+  .card-glow:hover::before {
+    @apply opacity-70 blur-md;
+  }
+
+  .bg-mesh-gradient {
+    background: 
+      radial-gradient(at 0% 0%, hsla(270, 90%, 20%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(220, 90%, 30%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(300, 90%, 20%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(240, 90%, 30%, 0.5) 0px, transparent 50%);
+  }
 }
 
 @keyframes fadeIn {
@@ -333,7 +378,7 @@
 
 @keyframes slideUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
   }
   to {

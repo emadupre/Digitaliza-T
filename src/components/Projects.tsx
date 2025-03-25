@@ -1,5 +1,5 @@
+
 import { useState } from 'react';
-import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import { 
   Card, 
   CardContent, 
@@ -21,17 +21,22 @@ const Projects = () => {
   const categories = Array.from(new Set(projectsData.map(project => project.category)));
 
   return (
-    <section id="proyectos" className="section-padding py-24">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="proyectos" className="section-padding py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-0"></div>
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="mb-16 max-w-3xl">
-          <h2 className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white mb-2">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4 text-white">
             Casos de éxito que demuestran nuestra experiencia
           </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mb-6"></div>
+          <p className="text-xl text-white/80 leading-relaxed">
+            Soluciones digitales a medida que han transformado negocios reales
+          </p>
         </div>
 
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Nuestros Proyectos</h2>
-          <p className="text-gray-300">
+          <p className="text-gray-300 text-lg">
             Transformamos tu visión en soluciones digitales que potencian el crecimiento de tu negocio
           </p>
         </div>
@@ -44,14 +49,14 @@ const Projects = () => {
             transition={{ duration: 0.7 }}
             className="w-full mb-10"
           >
-            <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+            <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 border-primary/20 bg-gradient-to-br from-black/80 to-purple-900/20 backdrop-blur-sm">
               <div className="relative h-[400px] overflow-hidden">
                 <img 
                   src={featuredProject.image} 
                   alt={featuredProject.title} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-8 text-white">
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">{featuredProject.title}</h3>
                   <p className="text-lg text-white/80 mb-4 max-w-2xl">{featuredProject.shortDesc}</p>
@@ -101,7 +106,7 @@ const Projects = () => {
                         </div>
                       </DialogHeader>
                       <div className="mt-6 flex justify-center">
-                        <Button className="group">
+                        <Button className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600">
                           Solicitar un proyecto similar <ExternalLink className="ml-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
                         </Button>
                       </div>
@@ -116,8 +121,8 @@ const Projects = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
-                  variant="outline" 
-                  className="text-white border-white/30 hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  variant="ghost" 
+                  className="text-white border border-white/20 hover:bg-white/5 backdrop-blur-sm text-lg px-8 py-6 h-auto group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-purple-500/50"
                 >
                   Ver más proyectos <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

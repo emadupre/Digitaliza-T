@@ -9,8 +9,8 @@ import { BeamsBackground } from "@/components/ui/beams-background";
 
 const Index = () => {
   return (
-    <div className="relative w-full">
-      <BeamsBackground intensity="medium" className="fixed inset-0 z-0" />
+    <div className="relative w-full bg-mesh-gradient min-h-screen">
+      <BeamsBackground intensity="strong" className="fixed inset-0 z-0 opacity-80" />
       <div className="relative z-10">
         <Navbar />
         <Hero />
