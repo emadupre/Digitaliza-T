@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import { 
@@ -25,10 +24,9 @@ const Projects = () => {
     <section id="proyectos" className="section-padding py-24">
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-16 max-w-3xl">
-          <GradualSpacing 
-            text="Casos de éxito que demuestran nuestra experiencia"
-            className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white"
-          />
+          <h2 className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white mb-2">
+            Casos de éxito que demuestran nuestra experiencia
+          </h2>
         </div>
 
         <div className="text-center mb-16 max-w-2xl mx-auto">
@@ -118,8 +116,8 @@ const Projects = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
-                  variant="secondary" 
-                  className="text-white hover:bg-secondary/80 backdrop-blur-sm text-lg px-8 py-6 h-auto group transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                  variant="outline" 
+                  className="text-white border-white/30 hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
                   Ver más proyectos <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
           <div className="text-center">
-            <h1 className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60 animate-fade-in">
+            <h1 className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent/60 animate-fade-in">
               Digitaliza-T
             </h1>
             <p className="text-xl md:text-2xl mt-4 text-white/80 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "200ms" }}>
