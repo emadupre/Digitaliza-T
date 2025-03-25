@@ -66,7 +66,7 @@ export const ProjectCard = ({ project, featured = false }: ProjectCardProps) => 
             <DialogTrigger asChild>
               <Button 
                 variant="outline" 
-                className="w-full text-primary/80 border-primary/20 hover:bg-transparent group-hover:border-primary group-hover:text-primary transition-colors duration-300"
+                className="w-full text-primary border-primary/20 hover:bg-transparent group-hover:border-primary group-hover:text-primary transition-colors duration-300"
               >
                 Ver detalles <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>

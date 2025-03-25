@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import { 
@@ -25,7 +26,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-16 max-w-3xl">
           <GradualSpacing 
-            text="Soluciones digitales que transforman empresas"
+            text="Casos de éxito que demuestran nuestra experiencia"
             className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white"
           />
         </div>
@@ -33,7 +34,7 @@ const Projects = () => {
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Nuestros Proyectos</h2>
           <p className="text-gray-300">
-            Descubre cómo impulsamos la transformación digital de empresas innovadoras
+            Transformamos tu visión en soluciones digitales que potencian el crecimiento de tu negocio
           </p>
         </div>
 
@@ -117,8 +118,8 @@ const Projects = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
-                  variant="ghost" 
-                  className="text-white border-primary/30 hover:bg-primary/10 hover:border-primary backdrop-blur-sm text-lg px-8 py-6 h-auto group"
+                  variant="secondary" 
+                  className="text-white hover:bg-secondary/80 backdrop-blur-sm text-lg px-8 py-6 h-auto group transition-all duration-300 hover:shadow-md hover:-translate-y-1"
                 >
                   Ver más proyectos <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
