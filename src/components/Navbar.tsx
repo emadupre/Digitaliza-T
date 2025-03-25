@@ -24,44 +24,46 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md' : 'glass'}`}>
-      <div className={`mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${scrolled ? 'max-w-4xl' : 'max-w-7xl'}`}>
+      <div className={`mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500 ${scrolled ? 'max-w-3xl' : 'max-w-7xl'}`}>
         <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4">
             <img 
-              src="/lovable-uploads/fbb9b1bc-849a-4db5-b147-6fca0deddf14.png" 
+              src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" 
               alt="Digitaliza-T Logo" 
-              className={`transition-all duration-300 ${scrolled ? 'h-7 w-auto' : 'h-8 w-auto'}`}
+              className={`transition-all duration-300 ${scrolled ? 'h-10 w-auto' : 'h-14 w-auto'}`}
             />
-            <a 
-              href="#home" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : ''}`}
-            >
-              Digitaliza-T
-            </a>
+            {!scrolled && (
+              <a 
+                href="#home" 
+                className="text-white hover:text-accent transition-colors text-lg font-medium"
+              >
+                Digitaliza-T
+              </a>
+            )}
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
             <a 
               href="#inicio" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : ''}`}
+              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
             >
               Inicio
             </a>
             <a 
               href="#servicios" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : ''}`}
+              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
             >
               Servicios
             </a>
             <a 
               href="#nosotros" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : ''}`}
+              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
             >
               Nosotros
             </a>
             <a 
               href="#contacto" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : ''}`}
+              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
             >
               Contacto
             </a>

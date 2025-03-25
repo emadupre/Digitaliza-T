@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,9 +14,9 @@ const Footer = () => {
           {/* Logo and description */}
           <div className="md:col-span-2">
             <img 
-              src="/lovable-uploads/fbb9b1bc-849a-4db5-b147-6fca0deddf14.png" 
+              src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" 
               alt="Digitaliza-T Logo" 
-              className="h-12 w-auto mb-6"
+              className="h-20 w-auto mb-6"
             />
             <p className="text-gray-400 mb-8 max-w-md">
               Transformando el futuro digital de tu negocio con soluciones tecnológicas innovadoras y estrategias personalizadas para el crecimiento online.
