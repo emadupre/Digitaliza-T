@@ -26,11 +26,11 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? 'py-2 bg-white shadow-md' 
+          ? 'py-2 bg-white/95 backdrop-blur-sm shadow-md' 
           : 'py-4 bg-transparent'
       }`}
     >
-      <div className={`mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500 ${scrolled ? 'max-w-7xl' : 'max-w-7xl'}`}>
+      <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <img 
@@ -40,43 +40,43 @@ const Navbar = () => {
             />
           </div>
           
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center space-x-8">
             <a 
               href="#inicio" 
-              className={`transition-colors ${
+              className={`transition-colors font-medium ${
                 scrolled 
-                  ? 'text-blue-600 text-base hover:text-blue-800' 
-                  : 'text-white text-base hover:text-accent'
+                  ? 'text-blue-600 hover:text-blue-800' 
+                  : 'text-white hover:text-purple-300'
               }`}
             >
               Inicio
             </a>
             <a 
               href="#servicios" 
-              className={`transition-colors ${
+              className={`transition-colors font-medium ${
                 scrolled 
-                  ? 'text-blue-600 text-base hover:text-blue-800' 
-                  : 'text-white text-base hover:text-accent'
+                  ? 'text-blue-600 hover:text-blue-800' 
+                  : 'text-white hover:text-purple-300'
               }`}
             >
               Servicios
             </a>
             <a 
               href="#nosotros" 
-              className={`transition-colors ${
+              className={`transition-colors font-medium ${
                 scrolled 
-                  ? 'text-blue-600 text-base hover:text-blue-800' 
-                  : 'text-white text-base hover:text-accent'
+                  ? 'text-blue-600 hover:text-blue-800' 
+                  : 'text-white hover:text-purple-300'
               }`}
             >
               Nosotros
             </a>
             <a 
               href="#contacto" 
-              className={`transition-colors ${
+              className={`transition-colors font-medium ${
                 scrolled 
-                  ? 'text-blue-600 text-base hover:text-blue-800' 
-                  : 'text-white text-base hover:text-accent'
+                  ? 'text-blue-600 hover:text-blue-800' 
+                  : 'text-white hover:text-purple-300'
               }`}
             >
               Contacto
@@ -95,37 +95,33 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className={`md:hidden ${scrolled ? 'bg-white' : 'glass'}`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden py-4 px-4 shadow-lg bg-white/95 backdrop-blur-sm">
+          <div className="flex flex-col space-y-4">
             <a 
               href="#inicio" 
-              className={`block px-3 py-2 ${
-                scrolled ? 'text-blue-600 hover:text-blue-800' : 'text-white hover:text-accent'
-              } transition-colors`}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Inicio
             </a>
             <a 
               href="#servicios" 
-              className={`block px-3 py-2 ${
-                scrolled ? 'text-blue-600 hover:text-blue-800' : 'text-white hover:text-accent'
-              } transition-colors`}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Servicios
             </a>
             <a 
               href="#nosotros" 
-              className={`block px-3 py-2 ${
-                scrolled ? 'text-blue-600 hover:text-blue-800' : 'text-white hover:text-accent'
-              } transition-colors`}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Nosotros
             </a>
             <a 
               href="#contacto" 
-              className={`block px-3 py-2 ${
-                scrolled ? 'text-blue-600 hover:text-blue-800' : 'text-white hover:text-accent'
-              } transition-colors`}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+              onClick={() => setIsOpen(false)}
             >
               Contacto
             </a>
