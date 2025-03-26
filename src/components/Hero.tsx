@@ -5,13 +5,13 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center section-padding pt-24 relative overflow-hidden">
+    <section id="inicio" className="min-h-screen flex items-center justify-center section-padding pt-24 pb-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-purple-900/40 z-0"></div>
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content - Left Side */}
           <div className="z-10 px-4 md:px-6 text-center md:text-left order-2 md:order-1">
-            <h1 className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in">
+            <h1 className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in pb-2">
               Digitaliza-T
             </h1>
             <p className="text-xl md:text-2xl mt-6 text-white/90 max-w-xl mx-auto md:mx-0 animate-fade-in leading-relaxed" style={{ animationDelay: "200ms" }}>
@@ -34,8 +34,8 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Bottom gradient for smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
+      {/* Subtle fade transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/10 z-10"></div>
     </section>
   );
 };

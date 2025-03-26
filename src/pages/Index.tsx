@@ -19,16 +19,16 @@ const Index = () => {
       <div className="relative z-10">
         <Navbar />
         
-        {/* Section transitions with gradient dividers */}
+        {/* Sections with fade transition */}
         <Hero />
         
-        <div className="section-divider bg-gradient-to-b from-black/80 via-purple-900/20 to-blue-900/30 h-24"></div>
+        <div className="section-divider bg-gradient-to-b from-transparent to-black/5 h-24"></div>
         <Services />
         
-        <div className="section-divider bg-gradient-to-b from-blue-900/30 via-indigo-900/20 to-purple-900/30 h-24"></div>
+        <div className="section-divider bg-gradient-to-b from-transparent to-black/5 h-24"></div>
         <Projects />
         
-        <div className="section-divider bg-gradient-to-b from-purple-900/30 via-indigo-900/20 to-black/80 h-24"></div>
+        <div className="section-divider bg-gradient-to-b from-transparent to-black/5 h-24"></div>
         <Contact />
         
         <Footer />
