@@ -59,6 +59,10 @@
     @apply py-20 px-6 md:px-12 lg:px-24;
   }
 
+  .section-divider {
+    @apply w-full overflow-hidden;
+  }
+
   .fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
