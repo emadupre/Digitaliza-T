@@ -364,10 +364,12 @@
 
   .bg-mesh-gradient {
     background: 
-      radial-gradient(at 0% 0%, hsla(270, 90%, 20%, 0.5) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(220, 90%, 30%, 0.5) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(300, 90%, 20%, 0.5) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(240, 90%, 30%, 0.5) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, hsla(270, 90%, 20%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(220, 90%, 30%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(300, 90%, 20%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(240, 90%, 30%, 0.4) 0px, transparent 50%);
+    background-color: hsl(240, 30%, 8%);
+    background-attachment: fixed;
   }
 }
 

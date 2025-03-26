@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center section-padding pt-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-purple-900/40 z-0"></div>
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content - Left Side */}
@@ -33,9 +32,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-      {/* Bottom gradient for smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
     </section>
   );
 };
