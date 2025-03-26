@@ -7,6 +7,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { BeamsBackground } from "@/components/ui/beams-background";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -20,18 +21,51 @@ const Index = () => {
         <Navbar />
         
         {/* Sections with improved fade transitions */}
-        <Hero />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Hero />
+        </motion.div>
         
-        <div className="w-full h-32 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
-        <Services />
-        
-        <div className="w-full h-32 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
-        <Projects />
-        
-        <div className="w-full h-32 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
-        <Contact />
-        
-        <Footer />
+        {/* Suave transición entre secciones */}
+        <div className="relative overflow-hidden">
+          <div className="w-full h-32 bg-gradient-to-b from-transparent to-purple-950/5"></div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <Services />
+          </motion.div>
+          
+          <div className="w-full h-32 bg-gradient-to-b from-transparent to-purple-950/5"></div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <Projects />
+          </motion.div>
+          
+          <div className="w-full h-32 bg-gradient-to-b from-transparent to-purple-950/5"></div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <Contact />
+          </motion.div>
+          
+          <Footer />
+        </div>
       </div>
     </div>
   );
