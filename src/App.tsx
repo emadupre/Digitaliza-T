@@ -31,12 +31,12 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen bg-mesh-gradient">
         <NewNavbar />
-        <div className="flex-grow">
+        <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>
