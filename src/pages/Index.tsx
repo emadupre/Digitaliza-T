@@ -1,11 +1,9 @@
 
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Nosotros from "@/components/Nosotros";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import { BeamsBackground } from "@/components/ui/beams-background";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
@@ -18,13 +16,11 @@ const Index = () => {
       
       {/* Main content */}
       <div className="relative z-10">
-        <Navbar />
         <Hero />
         <Services />
         <Nosotros />
         <Projects />
         <Contact />
-        <Footer />
       </div>
     </div>
   );

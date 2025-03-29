@@ -21,17 +21,17 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-blue-500 border-t-blue-500"></div>
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-purple-500 border-t-purple-500"></div>
       </div>
     );
   }
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-mesh-gradient">
         <NewNavbar />
-        <div className="pt-16"> {/* Add padding-top to account for fixed navbar */}
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
