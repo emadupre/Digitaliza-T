@@ -1,3 +1,4 @@
+
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -25,18 +26,18 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-4 py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem]  after:to-transparent after:content-[''] hover:border-white/20 hover:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2",
+        "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border border-white/20 bg-black/50 backdrop-blur-sm px-5 py-4 transition-all duration-500 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10",
         className
       )}
     >
-      <div>
-        <span className="relative inline-block rounded-full bg-blue-800 p-1">
+      <div className="flex items-center gap-2">
+        <span className={cn("relative inline-block rounded-full p-1.5", iconClassName)}>
           {icon}
         </span>
         <p className={cn("text-lg font-medium", titleClassName)}>{title}</p>
       </div>
-      <p className="whitespace-nowrap text-lg">{description}</p>
-      <p className="text-muted-foreground">{date}</p>
+      <p className="text-white/80 text-base">{description}</p>
+      <p className="text-white/60 text-sm">{date}</p>
     </div>
   );
 }
@@ -45,7 +46,7 @@ interface DisplayCardsProps {
   cards?: DisplayCardProps[];
 }
 
-export default function DisplayCards({ cards }: DisplayCardsProps) {
+export function DisplayCard({ cards }: DisplayCardsProps) {
   const defaultCards = [
     {
       className: "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
@@ -68,3 +69,5 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
     </div>
   );
 }
+
+export default DisplayCard;

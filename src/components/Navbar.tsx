@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -23,6 +22,10 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <nav
@@ -52,41 +55,31 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <NavigationMenu>
-              <NavigationMenuList className="flex space-x-1">
-                {[
-                  { href: "#inicio", label: "Inicio" },
-                  { href: "#servicios", label: "Servicios" },
-                  { href: "#nosotros", label: "Nosotros" },
-                  { href: "#proyectos", label: "Proyectos" },
-                  { href: "#contacto", label: "Contacto" },
-                ].map((item) => (
-                  <NavigationMenuItem key={item.label}>
-                    <NavigationMenuLink
-                      href={item.href}
-                      className={cn(
-                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-                        "bg-transparent hover:bg-purple-500/20 hover:text-purple-300",
-                        "focus:bg-purple-500/20 focus:text-purple-300 focus:outline-none",
-                        scrolled ? "text-sm" : "text-base"
-                      )}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+          <div className="hidden md:flex items-center space-x-1">
+            {[
+              { href: "#inicio", label: "Inicio" },
+              { href: "#servicios", label: "Servicios" },
+              { href: "#nosotros", label: "Nosotros" },
+              { href: "#proyectos", label: "Proyectos" },
+              { href: "#contacto", label: "Contacto" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`px-4 py-2 rounded-md text-sm font-medium text-white hover:text-purple-300 hover:bg-purple-500/20 transition-all ${
+                  scrolled ? 'text-sm' : 'text-base'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md hover:bg-purple-500/20 transition-colors ${
-                isOpen ? 'bg-purple-500/20' : ''
-              }`}
+              onClick={toggleMenu}
+              className="p-2 rounded-md hover:bg-purple-500/20 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
