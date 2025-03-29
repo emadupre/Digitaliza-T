@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const NewNavbar = () => {
@@ -48,7 +47,7 @@ const NewNavbar = () => {
     },
     { name: "Proyectos", path: "#proyectos", hasDropdown: false },
     { name: "Nosotros", path: "#nosotros", hasDropdown: false },
-    { name: "Contacto", path: "#contacto", hasDropdown: false }
+    // Eliminamos el ítem "Contacto" del menú para evitar redundancia
   ];
 
   return (
@@ -125,7 +124,7 @@ const NewNavbar = () => {
             ))}
           </div>
 
-          {/* Contact Button */}
+          {/* Contact Button - Mantenemos solo este */}
           <div className="hidden md:block">
             <a
               href="#contacto"
