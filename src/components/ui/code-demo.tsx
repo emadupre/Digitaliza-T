@@ -1,6 +1,7 @@
 
 'use client'
 
+import { useIsMobile } from "@/hooks/use-mobile";
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card"
 import { ErrorBoundary } from "react-error-boundary"
@@ -14,6 +15,13 @@ function FallbackComponent() {
 }
  
 export function SplineSceneBasic() {
+  const isMobile = useIsMobile();
+  
+  // If on mobile, don't load the 3D scene at all
+  if (isMobile) {
+    return null;
+  }
+  
   return (
     <Card className="w-full h-[500px] bg-black/[0.96] relative overflow-hidden">
       <div className="flex h-full">

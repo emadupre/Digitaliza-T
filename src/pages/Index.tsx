@@ -11,7 +11,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 const Index = () => {
   return (
     <div className="relative w-full bg-mesh-gradient min-h-screen">
-      {/* Background effects */}
+      {/* Background effects - added consistent background across all sections */}
       <BeamsBackground intensity="medium" className="fixed inset-0 z-0 opacity-60" />
       <BackgroundBeams className="fixed inset-0 z-0 opacity-20" />
       

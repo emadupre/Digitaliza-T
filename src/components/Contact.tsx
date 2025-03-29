@@ -92,8 +92,8 @@ const Contact = () => {
   }
 
   return (
-    <section id="contacto" className="section-padding">
-      <div className="max-w-4xl mx-auto glass p-8 rounded-xl">
+    <section id="contacto" className="section-padding relative z-10">
+      <div className="max-w-4xl mx-auto glass backdrop-blur-md bg-background/25 p-8 rounded-xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Contáctanos</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
@@ -377,6 +377,6 @@ const Contact = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Contact;
