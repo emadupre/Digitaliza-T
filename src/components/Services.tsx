@@ -1,6 +1,5 @@
-
 import { Smartphone, Globe, Code, Sparkles } from "lucide-react";
-import DisplayCards from "@/components/ui/display-cards";
+import { DisplayCards } from "@/components/ui/display-cards";
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import { SparkleButton } from "@/components/ui/sparkle-button";
 
