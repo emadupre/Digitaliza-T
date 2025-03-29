@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 80) {
+      if (offset > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -23,73 +25,106 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md' : 'glass'}`}>
-      <div className={`mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500 ${scrolled ? 'max-w-3xl' : 'max-w-7xl'}`}>
-        <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-4">
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'py-2 bg-black/80 backdrop-blur-md border-b border-white/10' 
+          : 'py-4 bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo and Brand */}
+          <div className="flex items-center">
             <img 
               src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" 
               alt="Digitaliza-T Logo" 
-              className={`transition-all duration-300 ${scrolled ? 'h-10 w-auto' : 'h-14 w-auto'}`}
+              className={`transition-all duration-300 ${scrolled ? 'h-8 w-auto' : 'h-12 w-auto'}`}
             />
-            {!scrolled && (
-              <a 
-                href="#home" 
-                className="text-white hover:text-accent transition-colors text-lg font-medium"
-              >
-                Digitaliza-T
-              </a>
-            )}
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
             <a 
               href="#inicio" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
+              className={`ml-3 font-heading text-white hover:text-purple-400 transition-colors ${
+                scrolled ? 'text-lg' : 'text-xl'
+              }`}
             >
-              Inicio
-            </a>
-            <a 
-              href="#servicios" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
-            >
-              Servicios
-            </a>
-            <a 
-              href="#nosotros" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
-            >
-              Nosotros
-            </a>
-            <a 
-              href="#contacto" 
-              className={`text-white hover:text-accent transition-colors ${scrolled ? 'text-sm' : 'text-base'}`}
-            >
-              Contacto
+              Digitaliza-T
             </a>
           </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <NavigationMenu>
+              <NavigationMenuList className="flex space-x-1">
+                {[
+                  { href: "#inicio", label: "Inicio" },
+                  { href: "#servicios", label: "Servicios" },
+                  { href: "#nosotros", label: "Nosotros" },
+                  { href: "#proyectos", label: "Proyectos" },
+                  { href: "#contacto", label: "Contacto" },
+                ].map((item) => (
+                  <NavigationMenuItem key={item.label}>
+                    <NavigationMenuLink
+                      href={item.href}
+                      className={cn(
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
+                        "bg-transparent hover:bg-purple-500/20 hover:text-purple-300",
+                        "focus:bg-purple-500/20 focus:text-purple-300 focus:outline-none",
+                        scrolled ? "text-sm" : "text-base"
+                      )}
+                    >
+                      {item.label}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button */}
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white-800 hover:text-accent"
+              className={`p-2 rounded-md hover:bg-purple-500/20 transition-colors ${
+                isOpen ? 'bg-purple-500/20' : ''
+              }`}
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <X className="h-6 w-6 text-white" />
+              ) : (
+                <Menu className="h-6 w-6 text-white" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden glass">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#inicio" className="block px-3 py-2 text-white hover:text-accent transition-colors">Inicio</a>
-            <a href="#servicios" className="block px-3 py-2 text-white hover:text-accent transition-colors">Servicios</a>
-            <a href="#nosotros" className="block px-3 py-2 text-white hover:text-accent transition-colors">Nosotros</a>
-            <a href="#contacto" className="block px-3 py-2 text-white hover:text-accent transition-colors">Contacto</a>
-          </div>
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden transition-all duration-300 overflow-hidden ${
+          isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/90 backdrop-blur-xl border-t border-b border-white/10">
+          {[
+            { href: "#inicio", label: "Inicio" },
+            { href: "#servicios", label: "Servicios" },
+            { href: "#nosotros", label: "Nosotros" },
+            { href: "#proyectos", label: "Proyectos" },
+            { href: "#contacto", label: "Contacto" },
+          ].map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-purple-300 hover:bg-purple-500/20 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
