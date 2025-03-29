@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content - Left Side */}
           <div className="z-10 px-4 md:px-6 text-center md:text-left order-2 md:order-1">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in leading-tight md:leading-tight mb-4">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in leading-[1.15] tracking-tight mb-4">
               Digitaliza-T
             </h1>
             <p className="text-xl md:text-2xl mt-4 text-white/90 max-w-xl mx-auto md:mx-0 animate-fade-in leading-relaxed" style={{ animationDelay: "200ms" }}>
