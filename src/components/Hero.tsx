@@ -13,9 +13,12 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content - Left Side */}
           <div className="z-10 px-4 md:px-6 text-center md:text-left order-2 md:order-1">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in leading-[1.15] tracking-tight mb-4">
-              Digitaliza-T
-            </h1>
+            {/* Title with proper line height and padding to fully display text */}
+            <div className="mb-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in pb-2">
+                Digitaliza-T
+              </h1>
+            </div>
             <p className="text-xl md:text-2xl mt-4 text-white/90 max-w-xl mx-auto md:mx-0 animate-fade-in leading-relaxed" style={{ animationDelay: "200ms" }}>
               Transformando el futuro digital de tu negocio con soluciones innovadoras
             </p>
