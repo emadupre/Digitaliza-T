@@ -34,10 +34,10 @@ function DisplayCard({
         <span className={cn("relative inline-block rounded-full p-1.5", iconClassName)}>
           {icon}
         </span>
-        <p className={cn("text-lg font-medium", titleClassName)}>{title}</p>
+        <p className={cn("text-base md:text-lg font-medium", titleClassName)}>{title}</p>
       </div>
-      <p className="text-white/80 text-base">{description}</p>
-      <p className="text-white/60 text-sm">{date}</p>
+      <p className="text-white/80 text-sm md:text-base">{description}</p>
+      <p className="text-white/60 text-xs md:text-sm">{date}</p>
     </div>
   );
 }
@@ -62,7 +62,7 @@ export function DisplayCards({ cards }: DisplayCardsProps) {
   const displayCards = cards || defaultCards;
 
   return (
-    <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700 overflow-hidden">
+    <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700 overflow-visible">
       {displayCards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />
       ))}

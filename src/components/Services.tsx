@@ -36,13 +36,13 @@ const displayCards = [
   },
 ];
 
-// Mobile-friendly cards that will replace the display cards on smaller screens
+// Componente de tarjeta mejorado para móvil - más simple y con mejor rendimiento
 const MobileServiceCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
   <Card className="bg-black/50 backdrop-blur-md border border-white/10 overflow-hidden hover:border-purple-500/50 transition-all duration-300">
     <CardHeader className="pb-2">
       <div className="flex items-center gap-2">
         <div className="p-1.5 rounded-full bg-purple-500/20">{icon}</div>
-        <CardTitle className="text-lg text-white">{title}</CardTitle>
+        <CardTitle className="text-base md:text-lg text-white">{title}</CardTitle>
       </div>
     </CardHeader>
     <CardContent>
@@ -56,25 +56,25 @@ const Services = () => {
   const isMobile = useIsMobile();
   
   return (
-    <section id="servicios" className="section-padding min-h-screen flex items-center">
+    <section id="servicios" className="section-padding overflow-hidden py-16 md:py-24 flex items-center">
       <div className="container mx-auto px-4">
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <GradualSpacing 
             text="Creamos soluciones digitales a medida"
-            className="text-2xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white"
+            className="text-xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white"
           />
         </div>
 
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Nuestros Servicios</h2>
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Nuestros Servicios</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Ofrecemos soluciones tecnológicas integrales para potenciar tu negocio
           </p>
         </div>
 
         {isMobile ? (
-          // Mobile view: Vertically stacked cards
-          <div className="space-y-4 px-2 mb-12">
+          // Vista móvil: Tarjetas apiladas verticalmente con diseño simplificado
+          <div className="space-y-4 px-2 mb-8">
             <MobileServiceCard 
               icon={<Sparkles className="size-4 text-purple-400" />} 
               title="Desarrollo Web" 
@@ -92,15 +92,15 @@ const Services = () => {
             />
           </div>
         ) : (
-          // Desktop view: 3D stacked cards
-          <div className="flex min-h-[400px] w-full items-center justify-center py-16 max-w-full overflow-hidden">
-            <div className="w-full max-w-3xl">
+          // Vista de escritorio: Tarjetas 3D apiladas con mejor control de overflow
+          <div className="flex items-center justify-center py-8 md:py-16 w-full max-w-full relative">
+            <div className="w-full max-w-3xl overflow-visible">
               <DisplayCards cards={displayCards} />
             </div>
           </div>
         )}
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-6 md:mt-8">
           <SparkleButton text="Comencemos" href="/contacto" />
         </div>
       </div>

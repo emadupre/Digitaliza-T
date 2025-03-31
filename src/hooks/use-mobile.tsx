@@ -5,29 +5,29 @@ const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState<boolean>(() => {
-    // Use a safe initial value that works server-side
+    // Usar un valor inicial seguro que funcione del lado del servidor
     if (typeof window === 'undefined') return false
     return window.innerWidth < MOBILE_BREAKPOINT
   })
 
   React.useEffect(() => {
-    // Use the more efficient matchMedia API
+    // Usar una función que se ejecute menos veces para mejorar el rendimiento
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
     
-    // Set initial state based on media query
+    // Establecer el estado inicial basado en la media query
     setIsMobile(mql.matches)
     
-    // Create a handler that uses the MediaQueryList result directly
+    // Crear un manejador que use el resultado de MediaQueryList directamente
     const handleChange = (e: MediaQueryListEvent) => {
       setIsMobile(e.matches)
     }
     
-    // Modern browsers support addEventListener on MediaQueryList
+    // Los navegadores modernos admiten addEventListener en MediaQueryList
     if (mql.addEventListener) {
       mql.addEventListener("change", handleChange)
       return () => mql.removeEventListener("change", handleChange)
     } else {
-      // Fallback for older browsers - more efficient than resize event
+      // Fallback para navegadores más antiguos - más eficiente que el evento resize
       mql.addListener(handleChange)
       return () => mql.removeListener(handleChange)
     }

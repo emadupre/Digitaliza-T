@@ -29,7 +29,7 @@ function Footerdemo() {
   return (
     <footer className="relative border-t bg-gradient-to-b from-background to-black/90 text-foreground">
       <div className="container mx-auto px-4 py-10 md:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-300">Digitaliza-T</h2>
             <p className="text-sm md:text-base text-white/70">
@@ -39,7 +39,7 @@ function Footerdemo() {
           
           <div className="space-y-4">
             <h3 className="text-lg font-semibold relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-gradient-to-r after:from-purple-500 after:to-indigo-500 after:mt-1">Enlaces Rápidos</h3>
-            <nav className="grid grid-cols-2 gap-2 md:block md:space-y-2 text-sm">
+            <nav className={isMobile ? "grid grid-cols-2 gap-2 text-sm" : "space-y-2 text-sm"}>
               <a href="#inicio" className="block transition-colors hover:text-purple-400">
                 Inicio
               </a>
@@ -61,10 +61,10 @@ function Footerdemo() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-gradient-to-r after:from-purple-500 after:to-indigo-500 after:mt-1">Redes Sociales</h3>
             
-            {/* Social media icons - responsive layout */}
+            {/* Iconos de redes sociales - diseño responsivo */}
             <div className="flex flex-wrap gap-3">
               {isMobile ? (
-                // Mobile - Simple buttons without tooltips for better performance
+                // Móvil - Botones simples sin tooltips para mejor rendimiento
                 <>
                   <Button variant="outline" size="icon" className="rounded-full bg-black/30 hover:bg-purple-500/20 border-white/10 hover:border-purple-500/50 transition-all">
                     <Facebook className="h-4 w-4" />
@@ -84,7 +84,7 @@ function Footerdemo() {
                   </Button>
                 </>
               ) : (
-                // Desktop - Tooltips enabled for better UX
+                // Escritorio - Tooltips habilitados para mejor UX
                 <>
                   <TooltipProvider>
                     <Tooltip>
@@ -142,7 +142,7 @@ function Footerdemo() {
               )}
             </div>
             
-            {/* Theme toggle - simplified for better performance */}
+            {/* Alternador de tema - simplificado para mejor rendimiento */}
             <div className="flex items-center space-x-2 mt-4">
               <Sun className="h-4 w-4 text-white/70" />
               <Switch
@@ -159,7 +159,7 @@ function Footerdemo() {
           </div>
         </div>
         
-        {/* Footer bottom section - optimized layout */}
+        {/* Sección inferior del footer - diseño optimizado */}
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-center md:flex-row">
           <p className="text-xs md:text-sm text-white/60">
             © 2024 Digitaliza-T. Todos los derechos reservados.
