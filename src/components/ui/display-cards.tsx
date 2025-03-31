@@ -26,7 +26,7 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border border-white/20 bg-black/50 backdrop-blur-sm px-5 py-4 transition-all duration-500 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10",
+        "relative flex h-36 w-full sm:w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border border-white/20 bg-black/50 backdrop-blur-sm px-5 py-4 transition-all duration-500 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10",
         className
       )}
     >
@@ -62,7 +62,7 @@ export function DisplayCards({ cards }: DisplayCardsProps) {
   const displayCards = cards || defaultCards;
 
   return (
-    <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700">
+    <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700 overflow-hidden">
       {displayCards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />
       ))}

@@ -11,33 +11,25 @@ export function useIsMobile() {
   })
 
   React.useEffect(() => {
-    // Optimization: Use a debounced handler for resize events
-    let timeoutId: number | null = null
-    
-    const handleResize = () => {
-      if (timeoutId) {
-        window.clearTimeout(timeoutId)
-      }
-      
-      timeoutId = window.setTimeout(() => {
-        setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-      }, 100) // Debounce delay
-    }
-
-    // Check initial size
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    
-    // Use the more efficient matchMedia API when available
+    // Use the more efficient matchMedia API
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
+    
+    // Set initial state based on media query
+    setIsMobile(mql.matches)
+    
+    // Create a handler that uses the MediaQueryList result directly
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsMobile(e.matches)
+    }
     
     // Modern browsers support addEventListener on MediaQueryList
     if (mql.addEventListener) {
-      mql.addEventListener("change", handleResize)
-      return () => mql.removeEventListener("change", handleResize)
+      mql.addEventListener("change", handleChange)
+      return () => mql.removeEventListener("change", handleChange)
     } else {
-      // Fallback for older browsers
-      window.addEventListener('resize', handleResize)
-      return () => window.removeEventListener('resize', handleResize)
+      // Fallback for older browsers - more efficient than resize event
+      mql.addListener(handleChange)
+      return () => mql.removeListener(handleChange)
     }
   }, [])
 

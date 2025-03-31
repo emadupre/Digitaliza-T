@@ -14,23 +14,27 @@ const Hero = () => {
           {/* Text Content - Left Side */}
           <div className="z-10 px-4 md:px-6 text-center md:text-left order-2 md:order-1">
             {/* Title with proper containment and padding */}
-            <div className="overflow-visible mb-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-400 animate-fade-in leading-none pb-4">
+            <div className="relative mb-6 overflow-visible">
+              <h1 className={`
+                ${isMobile ? 'text-4xl pb-2' : 'text-5xl md:text-6xl lg:text-7xl pb-4'} 
+                font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-400 
+                animate-fade-in leading-tight
+              `}>
                 Digitaliza-T
               </h1>
             </div>
-            <p className="text-xl md:text-2xl mt-4 text-white/90 max-w-xl mx-auto md:mx-0 animate-fade-in leading-relaxed" style={{ animationDelay: "200ms" }}>
+            <p className="text-lg md:text-2xl mt-4 text-white/90 max-w-xl mx-auto md:mx-0 animate-fade-in leading-relaxed" style={{ animationDelay: "200ms" }}>
               Transformando el futuro digital de tu negocio con soluciones innovadoras
             </p>
             <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4 animate-fade-in" style={{ animationDelay: "400ms" }}>
-              <Button asChild className="px-6 py-6 text-lg h-auto bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 shadow-xl shadow-purple-500/20 border-0">
+              <Button asChild className="px-4 py-2 md:px-6 md:py-6 text-base md:text-lg h-auto bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 shadow-xl shadow-purple-500/20 border-0">
                 <a href="#servicios">
-                  Nuestros servicios <ArrowRight className="ml-2 h-5 w-5" />
+                  Nuestros servicios <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </a>
               </Button>
-              <Button asChild variant="outline" className="px-6 py-6 text-lg h-auto border-white/20 text-white hover:bg-white/10 backdrop-blur-sm">
-                <a href="#contacto">
-                  Contáctanos
+              <Button asChild variant="outline" className="px-4 py-2 md:px-6 md:py-6 text-base md:text-lg h-auto border-white/20 text-white hover:bg-white/10 backdrop-blur-sm">
+                <a href="#consulta">
+                  Consulta
                 </a>
               </Button>
             </div>
@@ -46,7 +50,7 @@ const Hero = () => {
           {/* Alternative design for mobile */}
           {isMobile && (
             <div className="order-1 flex justify-center">
-              <div className="w-48 h-48 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full opacity-70 blur-xl animate-pulse-soft"></div>
+              <div className="w-36 h-36 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full opacity-70 blur-xl animate-pulse-soft"></div>
             </div>
           )}
         </div>
