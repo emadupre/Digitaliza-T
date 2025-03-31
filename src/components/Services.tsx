@@ -73,8 +73,8 @@ const Services = () => {
         </div>
 
         {isMobile ? (
-          // Vista móvil: Tarjetas apiladas verticalmente con diseño simplificado
-          <div className="space-y-4 px-2 mb-8">
+          // Vista móvil: Tarjetas apiladas verticalmente con diseño simplificado y más espacio
+          <div className="space-y-6 px-2 mb-10">
             <MobileServiceCard 
               icon={<Sparkles className="size-4 text-purple-400" />} 
               title="Desarrollo Web" 
@@ -100,7 +100,7 @@ const Services = () => {
           </div>
         )}
 
-        <div className="flex justify-center mt-6 md:mt-8">
+        <div className="flex justify-center mt-8 md:mt-12">
           <SparkleButton text="Comencemos" href="/contacto" />
         </div>
       </div>

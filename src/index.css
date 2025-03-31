@@ -91,27 +91,24 @@
       ),
       hsl(260 calc(var(--active) * 97%) calc((var(--active) * 44%) + 12%));
     background: var(--bg);
-    font-size: 2rem;
     font-weight: 500;
     border: 0;
     cursor: pointer;
-    padding: 0.9em 1.3em;
     display: flex;
     align-items: center;
     gap: 0.25em;
     white-space: nowrap;
-    border-radius: 100px;
     position: relative;
     box-shadow:
-      0 0 calc(var(--active) * 6em) calc(var(--active) * 3em) hsl(260 97% 61% / 0.75),
+      0 0 calc(var(--active) * 3em) calc(var(--active) * 1.5em) hsl(260 97% 61% / 0.5),
       0 0.05em 0 0 hsl(260 calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
       0 -0.05em 0 0 hsl(260 calc(var(--active) * 97%) calc(var(--active) * 60%)) inset;
     transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
-    scale: calc(1 + (var(--active) * 0.1));
+    scale: calc(1 + (var(--active) * 0.05));
   }
 
   .sparkle-button button:active {
-    scale: 1;
+    scale: 0.98;
   }
 
   .sparkle-button button:hover,
@@ -138,7 +135,7 @@
   }
 
   .sparkle-button .text {
-    translate: 2% -6%;
+    translate: 1% -2%;
     letter-spacing: 0.01ch;
     background: linear-gradient(90deg, hsl(0 0% calc((var(--active) * 100%) + 65%)), hsl(0 0% calc((var(--active) * 100%) + 26%)));
     -webkit-background-clip: text;
@@ -148,7 +145,7 @@
 
   .particle-pen {
     position: absolute;
-    width: 200%;
+    width: 150%;
     aspect-ratio: 1;
     top: 50%;
     left: 50%;
@@ -161,7 +158,7 @@
 
   .particle {
     fill: white;
-    width: calc(var(--size, 0.25) * 1rem);
+    width: calc(var(--size, 0.2) * 1rem);
     aspect-ratio: 1;
     position: absolute;
     top: calc(var(--y) * 1%);
@@ -326,22 +323,6 @@
     }
   }
 
-  /* Existing sparkle-button classes */
-  
-
-  /* Existing fluid classes and animations */
-  
-
-  /* Existing content classes */
-  
-
-  /* Existing section and list styles */
-  
-
-  /* Existing header and heading styles */
-  
-
-  /* Add new gradient text utilities */
   .text-gradient-purple {
     @apply bg-gradient-to-r from-purple-500 to-indigo-400 bg-clip-text text-transparent;
   }
