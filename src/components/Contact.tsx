@@ -95,9 +95,9 @@ const Contact = () => {
     <section id="contacto" className="section-padding relative z-10">
       <div className="max-w-4xl mx-auto glass backdrop-blur-md bg-background/25 p-8 rounded-xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Contáctanos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Solicita una Consulta</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad
+            Cuéntanos sobre tu proyecto para que podamos ofrecerte una solución personalizada
           </p>
         </div>
 
@@ -136,7 +136,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, stagger: 0.1 }}
           className="w-full max-w-md mx-auto"
         >
           <Form {...form}>
