@@ -77,7 +77,7 @@ const Nosotros = () => {
                 <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 opacity-30 blur-xl"></div>
                 <div className="relative rounded-lg overflow-hidden shadow-xl border border-white/10">
                   <img 
-                    src="/lovable-uploads/fbb9b1bc-849a-4db5-b147-6fca0deddf14.png" 
+                    src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" 
                     alt="Equipo Digitaliza-T" 
                     className="w-full h-auto"
                   />
