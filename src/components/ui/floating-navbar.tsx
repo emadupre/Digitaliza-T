@@ -1,6 +1,6 @@
 
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   motion,
   AnimatePresence,
@@ -22,20 +22,12 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
+  const [visible, setVisible] = useState(true); // Always visible by default
 
-  const [visible, setVisible] = useState(false);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      // Show floating nav only after scrolling down a certain amount
-      if (scrollYProgress.get() > 0.1) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    }
-  });
+  // Initial animation only when component mounts
+  useEffect(() => {
+    setVisible(true);
+  }, []);
 
   return (
     <AnimatePresence mode="wait">
