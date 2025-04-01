@@ -29,7 +29,6 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-mesh-gradient">
-        <NewNavbar />
         <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Index />} />
