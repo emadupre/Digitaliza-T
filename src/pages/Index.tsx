@@ -8,6 +8,7 @@ import { BeamsBackground } from "@/components/ui/beams-background";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Footerdemo } from "@/components/ui/footer-section";
 import { FloatingNavDemo } from "@/components/ui/floating-navbar-demo";
+import NewNavbar from "@/components/NewNavbar";
 
 const Index = () => {
   return (
@@ -16,7 +17,10 @@ const Index = () => {
       <BeamsBackground intensity="medium" className="fixed inset-0 z-0 opacity-60" />
       <BackgroundBeams className="fixed inset-0 z-0 opacity-20" />
       
-      {/* Floating Navigation */}
+      {/* Main Navigation */}
+      <NewNavbar />
+      
+      {/* Floating Navigation - appears on scroll */}
       <FloatingNavDemo />
       
       {/* Main content */}

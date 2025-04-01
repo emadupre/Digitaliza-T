@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NewNavbar from "./components/NewNavbar";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import './App.css';

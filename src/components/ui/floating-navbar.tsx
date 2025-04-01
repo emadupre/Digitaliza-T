@@ -30,7 +30,9 @@ export const FloatingNav = ({
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.05) {
+      // Only show floating nav when we've scrolled down a bit (past the main nav)
+      // and are scrolling back up
+      if (scrollYProgress.get() < 0.1) {
         setVisible(false);
       } else {
         if (direction < 0) {
@@ -46,7 +48,7 @@ export const FloatingNav = ({
     <AnimatePresence mode="wait">
       <motion.div
         initial={{
-          opacity: 1,
+          opacity: 0,
           y: -100,
         }}
         animate={{
