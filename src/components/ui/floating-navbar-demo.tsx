@@ -1,7 +1,7 @@
 
 import React from "react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { Home, MessageSquare, User, Briefcase, Users } from "lucide-react";
+import { Home, MessageSquare, Briefcase, Users } from "lucide-react";
 
 export function FloatingNavDemo() {
   const navItems = [
