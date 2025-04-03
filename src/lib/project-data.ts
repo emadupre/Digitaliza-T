@@ -24,14 +24,14 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "Automatización de Bots para WhatsApp",
+    title: "Agentes de IA para WhatsApp",
     image: "https://images.unsplash.com/photo-1611746869696-d09bce200020?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    shortDesc: "Chatbots inteligentes para atención al cliente",
-    fullDesc: "Desarrollo de bots automatizados para atención en WhatsApp. Integración con bases de datos y respuestas inteligentes mediante IA. Permite gestionar consultas, reservas y pedidos sin intervención humana.",
-    tags: ["Bots", "Python", "IA", "WhatsApp"],
+    shortDesc: "Agentes inteligentes para atención al cliente",
+    fullDesc: "Desarrollo de agentes automatizados con inteligencia artificial para atención en WhatsApp. Integración con bases de datos y respuestas inteligentes mediante IA. Permite gestionar consultas, reservas y pedidos sin intervención humana.",
+    tags: ["Agentes", "IA", "WhatsApp", "Automatización"],
     client: "EduTech Academy",
     year: "2024",
-    category: "automatización"
+    category: "agentes"
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const projectsData = [
     year: "2023",
     category: "web"
   },
-  // Proyectos adicionales para el modal de "Ver Más"
+  // Proyectos adicionales 
   {
     id: 5,
     title: "Aplicación de Seguimiento de Gastos",
@@ -69,24 +69,58 @@ export const projectsData = [
   },
   {
     id: 7,
-    title: "CRM para Inmobiliaria",
+    title: "Agentes Inmobiliarios Inteligentes",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    shortDesc: "Sistema de gestión de clientes y propiedades",
-    fullDesc: "Desarrollo de un CRM personalizado para inmobiliaria con gestión de propiedades, seguimiento de clientes potenciales, automatización de comunicaciones y generación de documentos legales.",
-    tags: ["CRM", "React", "Node.js", "Inmobiliaria"],
+    shortDesc: "Sistema de agentes virtuales para inmobiliarias",
+    fullDesc: "Desarrollo de un sistema de agentes virtuales para inmobiliarias que automatizan la atención al cliente, filtrado de propiedades según preferencias, programación de visitas y seguimiento de clientes potenciales. Integración completa con CRM y plataformas inmobiliarias.",
+    tags: ["IA", "Inmobiliaria", "Automatización", "CRM"],
     client: "PropTech Homes",
     year: "2023",
-    category: "aplicación"
+    category: "agentes"
   },
   {
     id: 8,
-    title: "Chatbot para Atención Médica",
+    title: "Agentes de IA para Atención Médica",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    shortDesc: "Asistente virtual para consultas médicas preliminares",
-    fullDesc: "Desarrollo de un chatbot basado en IA para triaje médico inicial, programación de citas y seguimiento de tratamientos. Integración con historial clínico electrónico y sistema de notificaciones para profesionales de la salud.",
-    tags: ["IA", "NLP", "Salud", "Automatización"],
+    shortDesc: "Asistentes virtuales para consultas médicas preliminares",
+    fullDesc: "Desarrollo de agentes de IA para triaje médico inicial, programación de citas y seguimiento de tratamientos. Integración con historial clínico electrónico y sistema de notificaciones para profesionales de la salud.",
+    tags: ["IA", "Salud", "Automatización", "Asistencia Virtual"],
     client: "MediCare Group",
     year: "2024",
-    category: "automatización"
+    category: "agentes"
+  },
+  // Nuevos proyectos de agentes solicitados
+  {
+    id: 9,
+    title: "Agentes de IA Avanzados",
+    image: "https://images.unsplash.com/photo-1677442135126-4944007064c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    shortDesc: "Asistentes virtuales con capacidades conversacionales avanzadas",
+    fullDesc: "Creación de agentes de IA multimodales con comprensión de lenguaje natural avanzada. Capaces de interactuar con usuarios en múltiples plataformas, resolver problemas complejos y aprender de interacciones pasadas para mejorar continuamente.",
+    tags: ["IA Generativa", "NLP", "Machine Learning", "Multimodal"],
+    client: "Tech Innovations Corp",
+    year: "2025",
+    category: "agentes"
+  },
+  {
+    id: 10,
+    title: "Agentes de Automatización de Tareas",
+    image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    shortDesc: "Soluciones de automatización inteligente para procesos empresariales",
+    fullDesc: "Implementación de agentes inteligentes que automatizan tareas repetitivas y procesos empresariales. Desde la gestión documental hasta el procesamiento de datos y la coordinación entre departamentos, reduciendo costos operativos y aumentando la eficiencia.",
+    tags: ["RPA", "Workflow", "Automatización", "Eficiencia Operativa"],
+    client: "Business Solutions Inc",
+    year: "2024",
+    category: "agentes"
+  },
+  {
+    id: 11,
+    title: "Agentes de Llamadas con IA",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    shortDesc: "Asistentes virtuales para gestión de llamadas y atención telefónica",
+    fullDesc: "Desarrollo de agentes de IA para gestión de llamadas telefónicas con capacidad de comprensión contextual, identificación de emociones y generación de respuestas naturales. Integración con centralitas virtuales, sistemas CRM y herramientas de análisis para optimizar la atención al cliente.",
+    tags: ["VoIP", "IA Conversacional", "Atención al Cliente", "Análisis de Voz"],
+    client: "Global Contact Center",
+    year: "2025",
+    category: "agentes"
   }
 ];
