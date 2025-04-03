@@ -14,23 +14,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/project-card";
-import { projects } from "@/lib/project-data";
+import { projectsData } from "@/lib/project-data";
 
 const Projects = () => {
-  // Since we don't have proper project data structure in the original file,
-  // let's create a simple structure to satisfy our component needs
-  const projectsData = projects.map((project, index) => ({
-    id: index + 1,
-    title: project.title,
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2064&auto=format&fit=crop",
-    shortDesc: project.description,
-    fullDesc: "Descripción detallada del proyecto que destaca los objetivos, desafíos y soluciones implementadas.",
-    tags: ["React", "Node.js", "AI"],
-    client: "Cliente Ejemplo",
-    year: "2023",
-    category: index % 2 === 0 ? "Desarrollo Web" : "Inteligencia Artificial"
-  }));
-
   const featuredProject = projectsData[0];
   const categories = Array.from(new Set(projectsData.map(project => project.category)));
 
