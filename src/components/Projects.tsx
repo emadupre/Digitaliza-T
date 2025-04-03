@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   Card, 
@@ -117,7 +116,7 @@ const Projects = () => {
             </Card>
           </motion.div>
 
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-10 w-full">
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
@@ -129,7 +128,7 @@ const Projects = () => {
               </DialogTrigger>
               <DialogContent className="max-w-6xl max-h-[90vh] overflow-auto">
                 <DialogHeader className="mb-6">
-                  <DialogTitle className="text-2xl md:text-3xl">Todos nuestros proyectos</DialogTitle>
+                  <DialogTitle className="text-2xl md:text-3xl text-white">Todos nuestros proyectos</DialogTitle>
                 </DialogHeader>
                 
                 <Tabs defaultValue={categories[0]} className="w-full">
