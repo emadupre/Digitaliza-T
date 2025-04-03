@@ -42,7 +42,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" 
               alt="Digitaliza-T Logo" 
-              className={`transition-all duration-300 ${scrolled ? 'h-8 w-auto' : 'h-12 w-auto'}`}
+              className={`transition-all duration-300 ${scrolled ? 'h-9 w-auto' : 'h-12 w-auto'}`}
             />
             <a 
               href="#inicio" 
