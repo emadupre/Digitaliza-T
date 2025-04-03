@@ -1,8 +1,7 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Shield, Eye, RefreshCw } from "lucide-react"; // Importamos iconos minimalistas de Lucide
+import { Lightbulb, Shield, Eye, RefreshCw, ChevronRight } from "lucide-react"; // Importamos iconos minimalistas de Lucide
 
 const Nosotros = () => {
   // Definimos nuestros valores empresariales con iconos minimalistas de Lucide
