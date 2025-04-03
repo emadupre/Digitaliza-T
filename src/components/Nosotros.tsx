@@ -2,30 +2,30 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquare, ChevronRight } from "lucide-react";
+import { Lightbulb, Shield, Eye, RefreshCw } from "lucide-react"; // Importamos iconos minimalistas de Lucide
 
 const Nosotros = () => {
-  // Definimos nuestros valores empresariales
+  // Definimos nuestros valores empresariales con iconos minimalistas de Lucide
   const valores = [
     {
       titulo: "Innovación",
       descripcion: "Buscamos constantemente nuevas formas de resolver desafíos digitales.",
-      icono: "💡"
+      icono: <Lightbulb className="h-8 w-8 text-purple-400" strokeWidth={1.5} /> // Icono minimalista con trazo fino
     },
     {
       titulo: "Calidad",
       descripcion: "Nos comprometemos con la excelencia en cada línea de código que escribimos.",
-      icono: "✨"
+      icono: <Shield className="h-8 w-8 text-purple-400" strokeWidth={1.5} />
     },
     {
       titulo: "Transparencia",
       descripcion: "Mantenemos una comunicación clara y honesta durante todo el proceso.",
-      icono: "🔍"
+      icono: <Eye className="h-8 w-8 text-purple-400" strokeWidth={1.5} />
     },
     {
       titulo: "Adaptabilidad",
       descripcion: "Nos ajustamos rápidamente a nuevas tecnologías y necesidades cambiantes.",
-      icono: "🔄"
+      icono: <RefreshCw className="h-8 w-8 text-purple-400" strokeWidth={1.5} />
     }
   ];
 
@@ -96,7 +96,7 @@ const Nosotros = () => {
           </div>
         </div>
         
-        {/* Nueva sección: Nuestros Valores */}
+        {/* Nueva sección: Nuestros Valores con iconos minimalistas */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-white mb-12 text-center font-heading">
             <span className="relative">
@@ -110,7 +110,10 @@ const Nosotros = () => {
               <Card key={index} className="bg-black/40 backdrop-blur-md border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 overflow-hidden group">
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center">
-                    <div className="text-4xl mb-4">{valor.icono}</div>
+                    {/* Reemplazamos el emoji por el componente de icono */}
+                    <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">
+                      {valor.icono}
+                    </div>
                     <h4 className="text-xl font-medium text-white mb-2">{valor.titulo}</h4>
                     <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 mb-4 transform group-hover:scale-x-150 transition-transform duration-300"></div>
                     <p className="text-white/70">{valor.descripcion}</p>

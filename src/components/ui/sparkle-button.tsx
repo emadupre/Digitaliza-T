@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -28,12 +29,12 @@ export const SparkleButton = ({ text = "Comencemos", href = "/contacto" }: Spark
   }, []);
 
   return (
-    <div className="sparkle-button mt-6 flex justify-center"> {/* Añadido mt-6 para margen superior y centrado */}
-      <Link to={href}>
-        <button className="group text-lg sm:text-xl py-3 px-8 sm:px-10 rounded-full scale-95 hover:scale-105 transition-all duration-300 text-center"> {/* Ajustado padding, escala y tamaño del texto */}
+    <div className="sparkle-button mt-6 flex justify-center w-full"> {/* Añadido w-full para asegurar que ocupe todo el ancho y center funcione correctamente */}
+      <Link to={href} className="mx-auto"> {/* Añadido mx-auto para centrar el enlace */}
+        <button className="group text-lg sm:text-xl py-3 px-8 sm:px-10 rounded-full scale-95 hover:scale-105 transition-all duration-300 text-center"> {/* Mantenido text-center */}
           <span className="spark"></span>
           <span className="backdrop"></span>
-          <svg className="sparkle size-5 sm:size-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> {/* Tamaño SVG ajustado */}
+          <svg className="sparkle size-5 sm:size-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z" fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <span className="text">{text}</span>

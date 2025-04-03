@@ -25,11 +25,7 @@ export function FloatingNavDemo() {
       link: "#nosotros",
       icon: <Users className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
-    {
-      name: "Contacto",
-      link: "#contacto",
-      icon: <MessageSquare className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
+    // Eliminada la opción de Contacto del menú de navegación
   ];
 
   return (
