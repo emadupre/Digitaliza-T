@@ -51,7 +51,7 @@ export const FloatingNav = ({
       >
         {/* Logo */}
         <div className="mr-2">
-          <img src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" alt="Logo" className="h-9" />
+          <img src="/lovable-uploads/93ab0246-c34d-4dcc-b691-7c8ca6cb9c3f.png" alt="Logo" className="h-10" />
         </div>
         
         {navItems.map((navItem: any, idx: number) => (
