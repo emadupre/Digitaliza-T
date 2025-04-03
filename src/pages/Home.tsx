@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { Hero } from '../components/Hero';
-import { Projects } from '../components/Projects';
+import Projects from '../components/Projects';
 import { Services } from '../components/Services';
-import { Nosotros } from '../components/Nosotros';
-import { Footer } from '../components/Footer';
+import Nosotros from '../components/Nosotros';
+import Footer from '../components/Footer';
 import NewNavbar from '../components/NewNavbar';
 
 const Home = () => {

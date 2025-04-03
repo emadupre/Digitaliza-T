@@ -24,7 +24,7 @@ export const Hero = () => {
           y transformar tu presencia online.
         </p>
         <div className="flex justify-center">
-          <Button variant="hero">
+          <Button variant="hero" className="text-center mx-auto flex justify-center">
             Comencemos
           </Button>
         </div>
