@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div className="relative w-full bg-mesh-gradient min-h-screen">
       {/* Background effects optimizados - reducida opacidad para mejor rendimiento */}
-      <BeamsBackground intensity="low" className="fixed inset-0 z-0 opacity-40" />
+      <BeamsBackground intensity="subtle" className="fixed inset-0 z-0 opacity-40" />
       <BackgroundBeams className="fixed inset-0 z-0 opacity-10" />
       
       {/* Navegación flotante */}
