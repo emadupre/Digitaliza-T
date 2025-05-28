@@ -7,7 +7,7 @@ const Hero = () => {
   const isMobile = useIsMobile();
   
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center section-padding pt-20 md:pt-28 pb-16 md:pb-20 relative overflow-hidden">
+    <section id="inicio" className={`${isMobile ? 'min-h-[80vh] pt-20 pb-8' : 'min-h-screen pt-28 pb-16'} flex items-center justify-center section-padding relative overflow-hidden`}>
       <div className="max-w-7xl mx-auto w-full relative">
         <div className="flex items-center justify-center">
           {/* Text Content - Centered and optimized for mobile */}
@@ -23,12 +23,12 @@ const Hero = () => {
               </h1>
             </div>
             <p className={`
-              ${isMobile ? 'text-base leading-relaxed' : 'text-lg md:text-2xl leading-relaxed'} 
-              mt-3 md:mt-4 text-white/90 max-w-2xl mx-auto animate-fade-in
+              ${isMobile ? 'text-base leading-relaxed mb-6' : 'text-lg md:text-2xl leading-relaxed mt-3 md:mt-4'} 
+              text-white/90 max-w-2xl mx-auto animate-fade-in
             `} style={{ animationDelay: "200ms" }}>
               Transformando el futuro digital de tu negocio con soluciones innovadoras
             </p>
-            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-3 md:gap-4 animate-fade-in" style={{ animationDelay: "400ms" }}>
+            <div className={`${isMobile ? 'mt-4' : 'mt-6 md:mt-8'} flex flex-col sm:flex-row justify-center gap-3 md:gap-4 animate-fade-in`} style={{ animationDelay: "400ms" }}>
               <Button asChild className={`
                 ${isMobile ? 'px-6 py-3 text-base' : 'px-4 py-2 md:px-6 md:py-6 text-base md:text-lg'} 
                 h-auto bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 

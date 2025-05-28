@@ -9,22 +9,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Moon, Sun, Twitter } from "lucide-react"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
 
 function Footerdemo() {
-  const [isDarkMode, setIsDarkMode] = React.useState(true)
   const isMobile = useIsMobile()
-
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [isDarkMode])
 
   return (
     <footer className="relative border-t bg-gradient-to-b from-background to-black/90 text-foreground">
@@ -140,21 +129,6 @@ function Footerdemo() {
                   </TooltipProvider>
                 </>
               )}
-            </div>
-            
-            {/* Alternador de tema - simplificado para mejor rendimiento */}
-            <div className="flex items-center space-x-2 mt-4">
-              <Sun className="h-4 w-4 text-white/70" />
-              <Switch
-                id="dark-mode"
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
-                className="data-[state=checked]:bg-purple-600"
-              />
-              <Moon className="h-4 w-4 text-white/70" />
-              <Label htmlFor="dark-mode" className="sr-only">
-                Cambiar modo oscuro
-              </Label>
             </div>
           </div>
         </div>
